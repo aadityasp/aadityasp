@@ -1,3 +1,5 @@
+
+
 <h3 align="center">Hi there...Welcome to my world!</h3>
 <p align="center">
   <a href="https://www.linkedin.com/in/aadityasp/">LinkedIn</a>
@@ -11,7 +13,11 @@
 </p>
 <h3 align="center">Feel free to check out some of my projects here!</h3>
 
-[![Aditya's GitHub stats](https://github-readme-stats.vercel.app/api?username=aadityasp)](https://github.com/aadityasp/github-readme-stats)
+<!-- [![Aditya's GitHub stats](https://github-readme-stats.vercel.app/api?username=aadityasp)](https://github.com/aadityasp/github-readme-stats) -->
+
+<a href="https://github.com/anuraghazra/github-readme-stats">
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=aadityasp&show_icons=true&theme=radical" />
+</a>
 
 <!---
 - 👋 Hi, I’m Aditya.
