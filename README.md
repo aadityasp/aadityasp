@@ -15,11 +15,12 @@
 
 <!-- [![Aditya's GitHub stats](https://github-readme-stats.vercel.app/api?username=aadityasp)](https://github.com/aadityasp/github-readme-stats) -->
 
+[![Aditya's github activity graph](https://activity-graph.herokuapp.com/graph?username=aadityasp&theme=dracula)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
 <a href="https://github.com/anuraghazra/github-readme-stats">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=aadityasp&show_icons=true&theme=radical" />
 </a>
 
-[![Aditya's github activity graph](https://activity-graph.herokuapp.com/graph?username=aadityasp&theme=dracula)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 <!---
 - 👋 Hi, I’m Aditya.
