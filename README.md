@@ -11,6 +11,7 @@
 </p>
 <h3 align="center">Feel free to check out some of my projects here!</h3>
 
+[![Aditya's GitHub stats](https://github-readme-stats.vercel.app/api?username=aadityasp)](https://github.com/aadityasp/github-readme-stats)
 
 <!---
 - 👋 Hi, I’m Aditya.
