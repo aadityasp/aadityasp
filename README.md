@@ -2,7 +2,8 @@
 
 <h3 align="center">Hi there...Welcome to my world!</h3>
 <p align="center">
-  <a href="https://www.linkedin.com/in/aadityasp/">LinkedIn</a>
+  <a href="https://www.linkedin.com/in/aadityasp/">LinkedIn</a> |
+  <a href="https://www.adityasriprasad.com">Portfolio</a>
 </p>
 <p align="center">
    :mortar_board: I'm an Artificial Intelligence graduate student at Northeastern University <br/>
