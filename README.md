@@ -8,7 +8,7 @@
 
 🏢 **Product Manager** at [CStoreiQ](https://www.cstoreiq.com/) · M.S. in AI from Northeastern (Khoury) · B.Tech from Manipal
 
-🚀 Shipped 15+ features ($700K+ revenue) · 3 apps built with AI-augmented dev · Semi-finalist at MIT Reality Hack 2022
+🚀 Shipped 15+ features · 3 apps built with AI-augmented dev · Semi-finalist at MIT Reality Hack 2022
 
 🛠️ Product Strategy · LLMs & RAG · Computer Vision · Claude Code & Cursor · Agile/Scrum
 
