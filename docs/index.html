@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+  <meta name="description" content="Zealthy weight-care signup redesign with monthly, 3-month and 6-month plans, plus a paid-acquisition landing page. Product exercise by Aditya Appana." />
+  <title>Zealthy weight care signup concept · Aditya Appana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --canvas: #f7faf7;
+      --surface: #ffffff;
+      --surface-2: #eef5ef;
+      --surface-3: #e4eee7;
+      --ink: #16241c;
+      --muted: #4d6254;
+      --faint: #75857a;
+      --line: #cfdbd2;
+      --brand: #0b6b4f;
+      --brand-strong: #07513c;
+      --brand-soft: #d8eee5;
+      --signal: #f5a675;
+      --signal-soft: #fff0e8;
+      --gold: #8e6521;
+      --danger: #a9413d;
+      --shadow: 0 18px 48px rgba(22, 36, 28, .10);
+      --shadow-sm: 0 8px 24px rgba(22, 36, 28, .08);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --canvas: #0f1712;
+        --surface: #17221b;
+        --surface-2: #1d2b22;
+        --surface-3: #27382d;
+        --ink: #f1f7f3;
+        --muted: #b9c8bd;
+        --faint: #90a095;
+        --line: #36483b;
+        --brand: #78d9b5;
+        --brand-strong: #a5edcf;
+        --brand-soft: #203e32;
+        --signal: #ffb487;
+        --signal-soft: #41291f;
+        --gold: #e3bd78;
+        --danger: #ffaaa5;
+        --shadow: 0 18px 48px rgba(0, 0, 0, .32);
+        --shadow-sm: 0 8px 24px rgba(0, 0, 0, .24);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    button, input { font: inherit; }
+    a { color: inherit; }
+    svg { display: block; }
+    .skip { position: fixed; left: 16px; top: 16px; z-index: 100; padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; transform: translateY(-180%); }
+    .skip:focus { transform: translateY(0); }
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: color-mix(in srgb, var(--canvas) 90%, transparent);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topnav-inner {
+      max-width: var(--max);
+      margin: auto;
+      min-height: 62px;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .case-label { font-weight: 700; letter-spacing: -.02em; white-space: nowrap; }
+    .case-label span { color: var(--brand); }
+    .navlinks { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+    .navlinks a { text-decoration: none; color: var(--muted); font-size: .86rem; font-weight: 600; padding: 7px 10px; border-radius: 8px; }
+    .navlinks a:hover, .navlinks a:focus-visible { color: var(--ink); background: var(--surface-2); outline: none; }
+    main { display: block; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .hero { padding: 76px 0 68px; position: relative; overflow: clip; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr); gap: 60px; align-items: center; }
+    .context-line { color: var(--brand); font-weight: 700; margin: 0 0 15px; }
+    h1, h2, h3 { margin-top: 0; }
+    h1, h2 { font-family: "Newsreader", serif; letter-spacing: -.035em; }
+    h1 { font-size: clamp(3.25rem, 7vw, 6.2rem); line-height: .94; max-width: 780px; margin-bottom: 24px; }
+    .hero-copy { font-size: 1.18rem; color: var(--muted); max-width: 680px; margin: 0 0 30px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      border: 0;
+      border-radius: 12px;
+      min-height: 48px;
+      padding: 0 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--brand); color: #fff; }
+    @media (prefers-color-scheme: dark) { .btn-primary { color: #0b2017; } }
+    .btn-primary:hover { background: var(--brand-strong); }
+    .btn-secondary { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+    .hero-meta { margin-top: 34px; display: flex; gap: 12px 28px; flex-wrap: wrap; color: var(--faint); font-size: .88rem; }
+    .hero-meta strong { color: var(--ink); display: block; font-size: 1.05rem; }
+    .phone-stage { position: relative; min-height: 555px; display: grid; place-items: center; }
+    .orbit { position: absolute; inset: 10% 0; border-radius: 50%; background: var(--brand-soft); transform: rotate(-8deg); }
+    .phone {
+      position: relative;
+      z-index: 2;
+      width: 310px;
+      min-height: 580px;
+      border: 9px solid var(--ink);
+      border-radius: 38px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      padding: 24px 18px 20px;
+      overflow: hidden;
+    }
+    .phone:before { content: ""; display: block; width: 84px; height: 6px; background: var(--ink); border-radius: 20px; margin: -10px auto 24px; opacity: .9; }
+    .phone-brand { display: flex; align-items: center; justify-content: space-between; font-weight: 700; font-size: .86rem; }
+    .leaf-mark { width: 28px; height: 28px; border-radius: 9px 9px 9px 2px; background: var(--brand); transform: rotate(-8deg); }
+    .phone h3 { font-family: "Newsreader", serif; font-size: 2rem; line-height: 1.05; margin: 34px 0 10px; }
+    .phone p { color: var(--muted); font-size: .86rem; }
+    .mini-plan { border: 1px solid var(--line); padding: 14px; border-radius: 14px; margin: 11px 0; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+    .mini-plan.selected { border: 2px solid var(--brand); background: var(--brand-soft); }
+    .mini-plan span { display: block; }
+    .mini-plan small { color: var(--muted); }
+    .mini-plan strong { font-size: .9rem; }
+    .phone .btn { width: 100%; margin-top: 14px; font-size: .9rem; }
+    .annotation {
+      position: absolute;
+      z-index: 3;
+      width: 190px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: var(--shadow-sm);
+      font-size: .82rem;
+      color: var(--muted);
+    }
+    .annotation strong { color: var(--ink); display: block; margin-bottom: 3px; }
+    .ann-one { top: 13%; right: -8px; }
+    .ann-two { left: -6px; bottom: 8%; }
+    .section { padding: 92px 0; }
+    .section.alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: .7fr 1.3fr; gap: 48px; align-items: start; margin-bottom: 48px; }
+    .section-num { color: var(--brand); font-weight: 700; margin-bottom: 8px; }
+    h2 { font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 1; margin-bottom: 18px; }
+    .section-intro { font-size: 1.08rem; color: var(--muted); max-width: 680px; margin: 5px 0 0; }
+    .scope-note { padding: 20px 22px; background: var(--signal-soft); border-radius: 10px; color: var(--ink); margin-bottom: 28px; }
+    .scope-note strong { color: var(--gold); }
+    .research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .finding { padding: 24px; border-top: 3px solid var(--line); background: var(--surface-2); min-height: 220px; }
+    .finding.problem { border-color: var(--signal); }
+    .finding.opportunity { border-color: var(--brand); }
+    .finding .tag { font-size: .78rem; font-weight: 700; color: var(--faint); }
+    .finding h3 { font-size: 1.16rem; margin: 20px 0 9px; }
+    .finding p { color: var(--muted); margin: 0; font-size: .94rem; }
+    .evidence-strip { margin-top: 18px; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+    .evidence-step { padding: 24px; background: var(--surface); position: relative; }
+    .evidence-step + .evidence-step { border-left: 1px solid var(--line); }
+    .step-index { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--surface-3); font-weight: 700; font-size: .82rem; margin-bottom: 14px; }
+    .evidence-step strong { display: block; margin-bottom: 7px; }
+    .evidence-step p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .persona-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 28px; }
+    .persona-card { background: var(--ink); color: var(--canvas); border-radius: var(--radius-xl); padding: 32px; }
+    @media (prefers-color-scheme: dark) { .persona-card { background: #eff8f1; color: #132019; } }
+    .persona-card .label { color: var(--signal); font-weight: 700; font-size: .83rem; }
+    .persona-card h3 { font-family: "Newsreader", serif; font-size: 2.6rem; line-height: 1; margin: 20px 0; }
+    .persona-card p { opacity: .78; }
+    .quote { font-family: "Newsreader", serif; font-size: 1.45rem; line-height: 1.25; border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent); padding-top: 22px; margin-top: 24px; }
+    .need-list { display: grid; gap: 12px; }
+    .need { background: var(--surface-2); padding: 21px 22px; display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start; }
+    .need svg { color: var(--brand); width: 24px; }
+    .need strong { display: block; margin-bottom: 4px; }
+    .need span { color: var(--muted); font-size: .92rem; }
+    .principles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+    .principle { border-top: 1px solid var(--line); padding-top: 18px; }
+    .principle b { font-family: "Newsreader", serif; font-size: 2rem; color: var(--brand); }
+    .principle strong { display: block; margin: 8px 0 4px; }
+    .principle p { color: var(--muted); font-size: .88rem; margin: 0; }
+    .flow-layout { display: grid; grid-template-columns: 310px minmax(0, 1fr); gap: 34px; align-items: start; }
+    .flow-aside { position: sticky; top: 86px; }
+    .flow-aside h3 { font-size: 1.2rem; }
+    .step-tabs { display: grid; gap: 8px; margin-top: 18px; }
+    .step-tab { width: 100%; border: 1px solid var(--line); background: var(--surface); color: var(--muted); padding: 13px 14px; border-radius: 10px; cursor: pointer; text-align: left; font-weight: 600; display: flex; gap: 10px; align-items: center; }
+    .step-tab > span:first-child { display: inline-grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; background: var(--surface-2); font-size: .76rem; flex: 0 0 auto; }
+    .step-tab[aria-selected="true"] { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
+    .step-tab[aria-selected="true"] > span:first-child { background: var(--brand); color: #fff; }
+    @media (prefers-color-scheme: dark) { .step-tab[aria-selected="true"] { background: #eef7f0; color: #152019; } }
+    .design-note { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 20px; color: var(--muted); font-size: .9rem; }
+    .prototype-shell { background: var(--surface-2); border-radius: var(--radius-xl); min-height: 670px; display: grid; place-items: center; padding: 36px; }
+    .prototype { width: min(100%, 650px); background: var(--surface); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow-sm); overflow: hidden; }
+    .proto-head { padding: 20px 26px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+    .proto-brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.16rem; }
+    .proto-progress { font-size: .8rem; color: var(--muted); }
+    .proto-body { padding: 34px 36px 38px; min-height: 544px; display: flex; flex-direction: column; }
+    .proto-screen { display: none; flex: 1; }
+    .proto-screen.active { display: flex; flex-direction: column; }
+    .proto-screen h3 { font-family: "Newsreader", serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; margin-bottom: 10px; }
+    .proto-screen > p { color: var(--muted); margin-top: 0; }
+    .choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin: 22px 0; }
+    .choice { min-height: 72px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink); text-align: left; cursor: pointer; display: flex; align-items: center; gap: 11px; }
+    .choice:hover, .choice.selected { border-color: var(--brand); background: var(--brand-soft); }
+    .choice.selected { box-shadow: inset 0 0 0 1px var(--brand); }
+    .choice-dot { width: 20px; height: 20px; border: 2px solid var(--line); border-radius: 50%; flex: 0 0 auto; display: grid; place-items: center; }
+    .choice.selected .choice-dot { border-color: var(--brand); background: var(--brand); box-shadow: inset 0 0 0 4px var(--brand-soft); }
+    .proto-actions { margin-top: auto; display: flex; justify-content: space-between; gap: 10px; align-items: center; padding-top: 22px; }
+    .link-btn { border: 0; background: transparent; color: var(--muted); font-weight: 700; cursor: pointer; padding: 10px 0; }
+    .link-btn:disabled { opacity: .35; cursor: default; }
+    .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; margin: 18px 0; }
+    .plan-card { position: relative; padding: 19px 16px; border: 1px solid var(--line); background: var(--surface); border-radius: 15px; color: var(--ink); text-align: left; cursor: pointer; min-height: 190px; }
+    .plan-card:hover, .plan-card.selected { border-color: var(--brand); }
+    .plan-card.selected { background: var(--brand-soft); box-shadow: inset 0 0 0 1px var(--brand); }
+    .plan-card .popular { display: inline-block; background: var(--brand); color: #fff; font-size: .67rem; font-weight: 700; padding: 4px 7px; border-radius: 6px; margin-bottom: 11px; }
+    .plan-card h4 { margin: 0 0 8px; font-size: .9rem; }
+    .plan-price { font-family: "Newsreader", serif; font-size: 1.65rem; line-height: 1; }
+    .plan-price span { font-family: "DM Sans", sans-serif; color: var(--muted); font-size: .72rem; }
+    .plan-total { color: var(--muted); font-size: .76rem; margin-top: 6px; }
+    .save { display: block; margin-top: 14px; color: var(--brand); font-size: .76rem; font-weight: 700; }
+    .checkout { display: grid; grid-template-columns: 1fr .8fr; gap: 18px; margin-top: 16px; }
+    .field-mock { border: 1px solid var(--line); padding: 12px 13px; border-radius: 9px; margin-bottom: 9px; }
+    .field-mock small { display: block; color: var(--faint); font-size: .68rem; }
+    .field-mock span { color: var(--muted); font-size: .85rem; }
+    .order-box { background: var(--surface-2); padding: 18px; border-radius: 13px; }
+    .order-row { display: flex; justify-content: space-between; gap: 12px; font-size: .84rem; margin-bottom: 11px; }
+    .order-row.total { border-top: 1px solid var(--line); padding-top: 12px; font-weight: 700; }
+    .finance { border: 1px dashed var(--brand); border-radius: 9px; padding: 10px 11px; margin-top: 12px; font-size: .76rem; color: var(--muted); }
+    .concept-note { font-size: .74rem; color: var(--faint); margin: 12px 0 0; }
+    .research-grid.two { grid-template-columns: repeat(2, 1fr); }
+    .format-note { padding: 20px 22px; background: var(--brand-soft); border-radius: 10px; color: var(--ink); margin-bottom: 14px; }
+    .format-note strong { color: var(--brand); }
+    .reco-why { font-size: .82rem; color: var(--brand); font-weight: 600; margin: -4px 0 0; }
+    .plan-card .popular[hidden] { display: none; }
+    .plan-card .fin { display: block; margin-top: 6px; color: var(--muted); font-size: .72rem; }
+    .order-row[hidden] { display: none; }
+    .order-row.discount { color: var(--brand); }
+    .lp-start { text-align: center; margin: 16px 0 0; }
+    .lp-footer { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); text-align: center; }
+    .lp-footer h4 { font-family: "Newsreader", serif; font-size: 2rem; line-height: 1.05; margin: 0 0 14px; }
+    .lp-footer p { color: var(--faint); font-size: .78rem; max-width: 720px; margin: 18px auto 0; }
+    .lp-footer .links { color: var(--muted); font-size: .8rem; margin-top: 12px; }
+    .finding.neutral { border-color: var(--gold); }
+    .evidence-step.inferred { background: var(--surface-2); }
+    .evidence-step .tag { font-size: .68rem; font-weight: 700; color: var(--gold); margin-left: 8px; text-transform: uppercase; letter-spacing: .05em; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+    .eligibility-note { display: flex; gap: 10px; align-items: flex-start; background: var(--brand-soft); border-radius: 10px; padding: 12px 13px; font-size: .84rem; color: var(--ink); margin: 6px 0 0; }
+    .eligibility-note svg { width: 18px; color: var(--brand); flex: 0 0 auto; margin-top: 2px; }
+    .plan-pill { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-soft); color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: .82rem; font-weight: 600; margin: 4px 0 18px; }
+    .plan-pill b { color: var(--brand); }
+    .sso-row { display: grid; gap: 9px; margin: 6px 0 14px; }
+    .sso-btn { min-height: 46px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 9px; }
+    .sso-btn:hover { border-color: var(--ink); }
+    .divider { display: flex; align-items: center; gap: 12px; color: var(--faint); font-size: .76rem; margin: 4px 0 12px; }
+    .divider:before, .divider:after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+    .privacy-line { font-size: .76rem; color: var(--faint); margin: 8px 0 0; }
+    .order-row.renew { color: var(--muted); }
+    .consent { display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: start; font-size: .76rem; color: var(--muted); margin: 6px 0 12px; cursor: pointer; }
+    .consent input { width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--brand); }
+    .refund-line { font-size: .74rem; color: var(--brand); font-weight: 600; text-align: center; margin: 10px 0 0; }
+    .lp-fineprint { text-align: center; color: var(--muted); font-size: .8rem; max-width: 640px; margin: 10px auto 0; }
+    .faq { max-width: 760px; margin: 56px auto 0; border-top: 1px solid var(--line); }
+    .faq h4 { font-family: "Newsreader", serif; font-size: 2rem; line-height: 1.05; margin: 28px 0 10px; }
+    .faq details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+    .faq summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary:after { content: "+"; color: var(--brand); font-weight: 700; }
+    .faq details[open] summary:after { content: "\2013"; }
+    .faq details p { color: var(--muted); font-size: .92rem; margin: 10px 0 0; }
+    .landing-frame { border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); overflow: hidden; }
+    .lp-nav { min-height: 70px; padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; gap: 18px; border-bottom: 1px solid var(--line); }
+    .lp-brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.4rem; }
+    .lp-nav .btn { min-height: 42px; }
+    .lp-hero { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 590px; }
+    .lp-copy { padding: 64px 52px; display: flex; flex-direction: column; justify-content: center; }
+    .lp-copy h3 { font-family: "Newsreader", serif; font-size: clamp(3rem, 6vw, 5.2rem); letter-spacing: -.045em; line-height: .92; margin: 14px 0 20px; }
+    .lp-copy > p { color: var(--muted); font-size: 1.06rem; max-width: 600px; }
+    .trust-line { display: flex; gap: 9px 18px; flex-wrap: wrap; color: var(--muted); font-size: .82rem; margin: 20px 0; }
+    .trust-line span { display: inline-flex; align-items: center; gap: 7px; }
+    .trust-line svg { width: 17px; color: var(--brand); }
+    .lp-visual { background: var(--brand-soft); display: grid; place-items: center; position: relative; overflow: hidden; min-height: 470px; }
+    .visual-panel { width: 78%; background: var(--surface); padding: 28px; box-shadow: var(--shadow); transform: rotate(2deg); }
+    .visual-panel h4 { font-family: "Newsreader", serif; font-size: 1.8rem; margin: 0 0 4px; }
+    .progress-bars { display: flex; align-items: end; gap: 10px; height: 150px; margin: 22px 0; }
+    .bar { flex: 1; background: var(--surface-3); border-radius: 7px 7px 0 0; position: relative; }
+    .bar:nth-child(1) { height: 38%; }
+    .bar:nth-child(2) { height: 55%; }
+    .bar:nth-child(3) { height: 69%; }
+    .bar:nth-child(4) { height: 82%; background: var(--brand); }
+    .coach-note { background: var(--signal-soft); padding: 13px; border-radius: 10px; font-size: .82rem; }
+    .lp-content { padding: 68px 52px; }
+    .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 72px; }
+    .benefit { padding-top: 18px; border-top: 2px solid var(--brand); }
+    .benefit h4 { font-size: 1rem; margin: 14px 0 6px; }
+    .benefit p { color: var(--muted); margin: 0; font-size: .9rem; }
+    .lp-heading { text-align: center; max-width: 700px; margin: 0 auto 32px; }
+    .lp-heading h4 { font-family: "Newsreader", serif; font-size: 3rem; line-height: 1; margin: 0 0 10px; }
+    .lp-heading p { color: var(--muted); }
+    .lp-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .lp-plan { border: 1px solid var(--line); padding: 24px; min-height: 330px; display: flex; flex-direction: column; position: relative; background: var(--surface); }
+    .lp-plan.selected { border: 2px solid var(--brand); background: var(--brand-soft); }
+    .lp-plan .ribbon { font-size: .75rem; font-weight: 700; color: var(--brand); margin-bottom: 17px; min-height: 20px; }
+    .lp-plan h5 { font-size: 1rem; margin: 0 0 10px; }
+    .lp-plan .big { font-family: "Newsreader", serif; font-size: 2.8rem; line-height: 1; }
+    .lp-plan .big small { font-family: "DM Sans", sans-serif; font-size: .78rem; color: var(--muted); }
+    .lp-plan ul { list-style: none; padding: 0; margin: 18px 0; color: var(--muted); font-size: .84rem; }
+    .lp-plan li { margin: 7px 0; padding-left: 18px; position: relative; }
+    .lp-plan li:before { content: "✓"; position: absolute; left: 0; color: var(--brand); font-weight: 700; }
+    .lp-plan .btn { margin-top: auto; width: 100%; }
+    .landing-selected { text-align: center; color: var(--muted); font-size: .84rem; margin: 18px 0 0; min-height: 24px; }
+    .journey-map { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; counter-reset: stage; }
+    .journey-stage { padding: 24px; background: var(--surface-2); position: relative; }
+    .journey-stage:before { counter-increment: stage; content: counter(stage); display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; background: var(--ink); color: var(--canvas); font-weight: 700; font-size: .8rem; margin-bottom: 30px; }
+    .journey-stage h3 { font-size: 1rem; margin-bottom: 7px; }
+    .journey-stage p { color: var(--muted); font-size: .86rem; margin: 0; }
+    .journey-stage .metric { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--brand); font-size: .8rem; font-weight: 700; }
+    .decision-table { margin-top: 40px; border-top: 1px solid var(--line); }
+    .decision-row { display: grid; grid-template-columns: .8fr 1fr 1fr; gap: 22px; padding: 21px 0; border-bottom: 1px solid var(--line); align-items: start; }
+    .decision-row p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .decision-row strong { font-size: .9rem; }
+    .talk-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 34px; }
+    .agenda { border-top: 1px solid var(--line); }
+    .agenda-item { display: grid; grid-template-columns: 62px 1fr auto; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line); align-items: start; }
+    .agenda-num { color: var(--brand); font-weight: 700; }
+    .agenda-item h3 { font-size: 1rem; margin-bottom: 4px; }
+    .agenda-item p { color: var(--muted); margin: 0; font-size: .88rem; }
+    .time-pill { background: var(--surface-2); padding: 5px 9px; border-radius: 999px; font-size: .76rem; color: var(--muted); white-space: nowrap; }
+    .story-card { background: var(--brand-soft); padding: 28px; align-self: start; }
+    .story-card h3 { font-family: "Newsreader", serif; font-size: 2rem; line-height: 1.05; }
+    .story-card ol { margin: 0; padding-left: 20px; color: var(--muted); }
+    .story-card li { margin: 11px 0; }
+    .sources { padding: 46px 0 80px; }
+    .source-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .source { display: block; text-decoration: none; background: var(--surface); border: 1px solid var(--line); padding: 15px 17px; border-radius: 10px; }
+    .source:hover { border-color: var(--brand); }
+    .source strong { display: block; font-size: .9rem; }
+    .source span { display: block; color: var(--muted); font-size: .78rem; margin-top: 3px; overflow-wrap: anywhere; }
+    .footer-note { margin-top: 34px; color: var(--faint); font-size: .8rem; }
+    .toast { position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 20px); background: var(--ink); color: var(--canvas); padding: 12px 16px; border-radius: 10px; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transition: .2s ease; z-index: 50; text-align: center; max-width: calc(100vw - 32px); }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    .reveal { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 900px) {
+      .hero-grid, .section-head, .persona-grid, .flow-layout, .talk-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 52px; }
+      .phone-stage { min-height: 600px; }
+      .flow-aside { position: static; }
+      .step-tabs { grid-template-columns: repeat(7, 1fr); }
+      .step-tab { justify-content: center; padding: 11px 8px; }
+      .step-tab .tab-copy { display: none; }
+      .principles, .journey-map { grid-template-columns: repeat(2, 1fr); }
+      .lp-hero { grid-template-columns: 1fr; }
+      .lp-copy { padding: 50px 34px; }
+      .lp-visual { min-height: 400px; }
+      .lp-content { padding: 56px 34px; }
+      .lp-plans { grid-template-columns: 1fr; }
+      .lp-plan { min-height: auto; }
+      .research-grid { grid-template-columns: repeat(2, 1fr); }
+      .evidence-strip { grid-template-columns: repeat(2, 1fr); }
+      .evidence-step:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .evidence-step:nth-child(3) { border-left: 0; }
+    }
+    @media (max-width: 660px) {
+      .topnav-inner { padding: 9px 16px; min-height: 56px; }
+      .case-label { display: none; }
+      .navlinks { width: 100%; justify-content: space-between; gap: 0; }
+      .navlinks a { padding: 7px 5px; font-size: .73rem; }
+      .wrap { padding: 0 17px; }
+      .hero { padding: 42px 0 46px; }
+      h1 { font-size: clamp(3rem, 16vw, 4.4rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .hero-meta { display: grid; grid-template-columns: 1fr 1fr; }
+      .phone-stage { min-height: 565px; }
+      .phone { width: 286px; min-height: 540px; }
+      .annotation { width: 150px; font-size: .72rem; }
+      .ann-one { top: 8%; right: -4px; }
+      .ann-two { left: -2px; bottom: 2%; }
+      .section { padding: 64px 0; }
+      .section-head { gap: 14px; margin-bottom: 34px; }
+      h2 { font-size: 2.85rem; }
+      .research-grid, .research-grid.two, .evidence-strip, .principles, .choice-grid, .plan-grid, .checkout, .benefits, .journey-map, .source-list { grid-template-columns: 1fr; }
+      .evidence-step:nth-child(n+3) { border-top: 0; }
+      .evidence-strip { border-radius: 16px; }
+      .evidence-step + .evidence-step { border-left: 0; border-top: 1px solid var(--line); }
+      .persona-card { padding: 26px; }
+      .step-tabs { grid-template-columns: repeat(7, 1fr); gap: 4px; }
+      .prototype-shell { margin: 0 -17px; border-radius: 0; padding: 14px; min-height: auto; }
+      .prototype { border-radius: 18px; }
+      .proto-body { padding: 26px 18px 28px; min-height: 600px; }
+      .proto-screen h3 { font-size: 2.25rem; }
+      .choice-grid { gap: 8px; }
+      .choice { min-height: 60px; }
+      .plan-card { min-height: 130px; }
+      .checkout { gap: 6px; }
+      .lp-nav { padding: 13px 18px; }
+      .lp-copy { padding: 44px 22px; }
+      .lp-copy h3 { font-size: 3.45rem; }
+      .lp-content { padding: 50px 20px; }
+      .lp-visual { min-height: 360px; }
+      .visual-panel { width: 86%; padding: 20px; }
+      .decision-row { grid-template-columns: 1fr; gap: 7px; }
+      .agenda-item { grid-template-columns: 42px 1fr; }
+      .time-pill { grid-column: 2; justify-self: start; }
+    }
+    @media print {
+      @page { margin: 14mm; }
+      html { overflow: visible; }
+      body { background: #fff; color: #16241c; }
+      .topnav, .skip, .toast, .hero-actions, .step-tabs, .flow-aside > p, .orbit, .annotation, .lp-scroll { display: none !important; }
+      .section, .hero, .sources { padding: 28px 0; }
+      .section.alt { border: 0; }
+      .hero-grid, .flow-layout, .talk-grid, .persona-grid, .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .phone-stage { min-height: auto; }
+      .prototype-shell { display: block; min-height: auto; padding: 0; background: transparent; }
+      .prototype { width: 100%; max-width: 640px; box-shadow: none; }
+      .proto-body { min-height: auto; }
+      .proto-screen { display: flex !important; flex-direction: column; border-top: 1px dashed #cfdbd2; padding-top: 22px; margin-top: 22px; break-inside: avoid; }
+      .proto-screen:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+      .proto-screen:before { color: #0b6b4f; font-weight: 700; font-size: .78rem; margin-bottom: 10px; }
+      .proto-screen[data-screen="0"]:before { content: "Screen 1 of 7"; }
+      .proto-screen[data-screen="1"]:before { content: "Screen 2 of 7"; }
+      .proto-screen[data-screen="2"]:before { content: "Screen 3 of 7"; }
+      .proto-screen[data-screen="3"]:before { content: "Screen 4 of 7"; }
+      .proto-screen[data-screen="4"]:before { content: "Screen 5 of 7"; }
+      .proto-screen[data-screen="5"]:before { content: "Screen 6 of 7"; }
+      .proto-screen[data-screen="6"]:before { content: "Screen 7 of 7"; }
+      .proto-actions { display: none; }
+      .finding, .decision-row, .lp-plan, .agenda-item, .journey-stage, .persona-card, .evidence-step, .faq details { break-inside: avoid; }
+      .landing-frame { box-shadow: none; }
+      .lp-hero { min-height: auto; }
+      .lp-visual { min-height: 320px; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to case study</a>
+  <nav class="topnav" aria-label="Case study sections">
+    <div class="topnav-inner">
+      <div class="case-label">Weight care <span>concept</span></div>
+      <div class="navlinks">
+        <a href="#research">Research</a>
+        <a href="#flow">Flow</a>
+        <a href="#landing">Landing</a>
+        <a href="#rationale">Rationale</a>
+        <a href="#metrics">Metrics</a>
+        <a href="#talk-track">Talk track</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="context-line">Zealthy product exercise · Aditya Appana · aadityasp@gmail.com · September 2026</p>
+          <h1>A clearer path to affordable weight care.</h1>
+          <p class="hero-copy">A transparent, commitment-aware signup experience that lets people understand their care, compare plans, and choose with confidence before creating an account.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#flow">Explore the onboarding</a>
+            <a class="btn btn-secondary" href="#landing">View the landing page</a>
+          </div>
+          <div class="hero-meta" aria-label="Project overview">
+            <div><strong>3 plan options</strong>Monthly, quarterly, six-month</div>
+            <div><strong>7 screens</strong>Goals through payment</div>
+            <div><strong>1 core bet</strong>Compare plans before creating an account</div>
+          </div>
+        </div>
+        <div class="phone-stage" aria-label="Preview of plan selection concept">
+          <div class="orbit"></div>
+          <div class="phone">
+            <div class="phone-brand"><span>zealthy</span><span class="leaf-mark" aria-hidden="true"></span></div>
+            <h3>Choose the pace that fits your life.</h3>
+            <p>Every plan includes licensed provider review and ongoing care support.</p>
+            <div class="mini-plan"><div><strong>Monthly</strong><small>Then $135 per month</small></div><strong>$49 first month</strong></div>
+            <div class="mini-plan selected"><div><strong>3 months</strong><small>$56 less than 3 × $135</small></div><strong>$349</strong></div>
+            <div class="mini-plan"><div><strong>6 months</strong><small>$211 less than 6 × $135</small></div><strong>$599</strong></div>
+            <button class="btn btn-primary" data-jump="flow">Continue with 3 months</button>
+          </div>
+          <div class="annotation ann-one"><strong>Choice before commitment</strong>Plan comparison appears before account creation.</div>
+          <div class="annotation ann-two"><strong>Plain-language math</strong>Total due, renewal terms, and monthly equivalent stay together.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="research">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-num">01</div><h2>Research and framing</h2></div>
+          <p class="section-intro">The core tension is not only price. It is uncertainty. People are asked to hand over personal information before they can compare the total cost, understand the care model, or decide whether a longer plan fits them.</p>
+        </div>
+        <div class="format-note"><strong>Format note:</strong> access to the Patient-Facing-Flows Figma file was requested on September 17, 2026 and was still pending at submission, so the flow and landing page are delivered as this interactive page plus PDF and PNG exports of every screen. The frames will be ported into the Figma style guide as soon as access is granted.</div>
+        <div class="scope-note"><strong>Research confidence:</strong> this is an assumption-led design based on a heuristic review of the live flow up to the account gate, Zealthy's public weight-loss landing page, the exercise brief, and the Zealthy One Pager (company context only). Screens behind the gate are inferred from comparable telehealth flows and are labelled as such. No patient interviews or usability tests were conducted, so the persona below is a proto-persona, not a claimed research finding.</div>
+        <div class="research-grid">
+          <article class="finding problem reveal"><span class="tag">Observed friction</span><h3>Urgency arrives before value</h3><p>A limited-time discount appears immediately after one goal question. It can feel transactional before trust, clinical fit, and program value are established.</p></article>
+          <article class="finding problem reveal"><span class="tag">Observed friction</span><h3>Pricing hides behind an account wall</h3><p>The live journey asks for Apple, Google, or email account creation before a user can reach payment and compare the complete offer.</p></article>
+          <article class="finding problem reveal"><span class="tag">Prompt gap</span><h3>Longer terms add mental math</h3><p>Quarterly and six-month plans introduce larger totals. Without monthly equivalents and savings context, comparison gets harder at the moment of commitment.</p></article>
+          <article class="finding opportunity reveal"><span class="tag">Design opportunity</span><h3>Progressive disclosure</h3><p>Explain the care model first, ask only questions that improve relevance, then introduce plans before requesting an account.</p></article>
+          <article class="finding opportunity reveal"><span class="tag">Design opportunity</span><h3>One comparison language</h3><p>Show term, total due, effective monthly price, renewal cadence, and savings in the same order on every plan card.</p></article>
+          <article class="finding opportunity reveal"><span class="tag">Design opportunity</span><h3>Keep financing honest</h3><p>Offer pay-over-time as an optional checkout path without inventing approval, APR, or installment claims before eligibility is known.</p></article>
+        </div>
+        <div class="evidence-strip" aria-label="Observed current journey">
+          <article class="evidence-step"><span class="step-index">1</span><strong>Goals</strong><p>A multi-select question asks what the person hopes to accomplish.</p></article>
+          <article class="evidence-step"><span class="step-index">2</span><strong>Limited-time offer</strong><p>When observed on September 16, 2026, the experience promoted $96 off the first month beside a sale end date. The exercise pricing implies an $86 first-month discount, $135 to $49.</p></article>
+          <article class="evidence-step"><span class="step-index">3</span><strong>Account gate</strong><p>Apple, Google, or email signup is required before pricing and payment are reached.</p></article>
+          <article class="evidence-step inferred"><span class="step-index">4</span><strong>Behind the gate<span class="tag">Inferred</span></strong><p>Eligibility and intake questions, then a single monthly plan at checkout. Longer terms have no comparison surface today.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-num">02</div><h2>The person behind the funnel</h2></div>
+          <p class="section-intro">A useful starting point is a cautious comparator: someone motivated enough to click an ad, but still evaluating clinical credibility, cost, and how much commitment is realistic.</p>
+        </div>
+        <div class="persona-grid">
+          <article class="persona-card reveal">
+            <span class="label">Proto-persona</span>
+            <h3>The cautious comparator</h3>
+            <p>Goal-oriented, price-aware, and wary of hidden fees. They want clinical support but may not yet know which treatment is appropriate.</p>
+            <div class="quote">“Show me what I get, what I pay today, and what happens next. Then I can decide.”</div>
+          </article>
+          <div class="need-list">
+            <div class="need reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><div><strong>Trust before commitment</strong><span>Clear clinical process, provider-review timing, and eligibility language before any medication expectations.</span></div></div>
+            <div class="need reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.2 1.2-2 3-2s3 .8 3 2-1.2 2-3 2-3 .8-3 2 1.2 2 3 2 3-.8 3-2"/></svg><div><strong>Cost without decoding</strong><span>Total due, renewal timing, effective monthly cost, and exact savings should scan in seconds.</span></div></div>
+            <div class="need reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M7 3v6M17 3v6M5 11h14v9H5z"/><path d="M8 15h3"/></svg><div><strong>A commitment that fits</strong><span>Monthly flexibility, quarterly balance, or six-month value, without implying the longest term is right for everyone.</span></div></div>
+            <div class="need reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H8l-4 4V4z"/><path d="M8 9h8M8 12h5"/></svg><div><strong>A human path forward</strong><span>Ongoing support from a care team needs to feel concrete, not buried as fine print.</span></div></div>
+          </div>
+        </div>
+        <div class="principles">
+          <div class="principle"><b>1</b><strong>Earn the next step</strong><p>Each screen answers a question before asking for more information.</p></div>
+          <div class="principle"><b>2</b><strong>Compare like with like</strong><p>Use consistent price anatomy across every plan.</p></div>
+          <div class="principle"><b>3</b><strong>Recommend, do not pressure</strong><p>A recommendation explains why and remains easy to change.</p></div>
+          <div class="principle"><b>4</b><strong>Separate care from hype</strong><p>Use clinical eligibility language and avoid medication promises.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="flow">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-num">03</div><h2>Redesigned onboarding</h2></div>
+          <p class="section-intro">The proposed flow keeps the early goal question, confirms state and BMI eligibility before anyone invests time, adds one preference question to support a transparent recommendation, moves plan comparison before account creation, and keeps the selected plan visible through account setup and payment.</p>
+        </div>
+        <div class="flow-layout">
+          <aside class="flow-aside">
+            <h3>Interactive concept</h3>
+            <p class="section-intro">Select a screen or use the prototype controls. Choices are temporary and exist only for this walkthrough.</p>
+            <div class="step-tabs" role="tablist" aria-label="Prototype steps">
+              <button class="step-tab" role="tab" aria-selected="true" data-step="0"><span>1</span><span class="tab-copy">Goals</span></button>
+              <button class="step-tab" role="tab" aria-selected="false" data-step="1"><span>2</span><span class="tab-copy">Basics</span></button>
+              <button class="step-tab" role="tab" aria-selected="false" data-step="2"><span>3</span><span class="tab-copy">Health</span></button>
+              <button class="step-tab" role="tab" aria-selected="false" data-step="3"><span>4</span><span class="tab-copy">Priorities</span></button>
+              <button class="step-tab" role="tab" aria-selected="false" data-step="4"><span>5</span><span class="tab-copy">Plan</span></button>
+              <button class="step-tab" role="tab" aria-selected="false" data-step="5"><span>6</span><span class="tab-copy">Account</span></button>
+              <button class="step-tab" role="tab" aria-selected="false" data-step="6"><span>7</span><span class="tab-copy">Payment</span></button>
+            </div>
+            <p class="design-note" id="designNote"><strong>Why this screen:</strong> Use inclusive goals to personalize the journey without implying a diagnosis or treatment.</p>
+          </aside>
+
+          <div class="prototype-shell">
+            <div class="prototype" aria-live="polite">
+              <div class="proto-head"><div class="proto-brand">zealthy</div><div class="proto-progress" id="progressText">Step 1 of 7</div></div>
+              <div class="proto-body">
+                <section class="proto-screen active" data-screen="0">
+                  <h3>What would you like help with?</h3>
+                  <p>Choose any that matter to you. Your answers help us shape the next steps.</p>
+                  <div class="choice-grid">
+                    <button class="choice selected"><span class="choice-dot"></span><span>Lose weight</span></button>
+                    <button class="choice"><span class="choice-dot"></span><span>Explore GLP-1 options</span></button>
+                    <button class="choice"><span class="choice-dot"></span><span>Build lasting habits</span></button>
+                    <button class="choice"><span class="choice-dot"></span><span>Feel more active</span></button>
+                  </div>
+                  <div class="proto-actions"><button class="link-btn" disabled>Back</button><button class="btn btn-primary next-btn">Continue</button></div>
+                </section>
+                <section class="proto-screen" data-screen="1">
+                  <h3>A few basics, so we only show care you can get</h3>
+                  <p>Providers are licensed by state, and weight care eligibility depends on BMI. Checking this now means nobody compares prices for care they cannot receive.</p>
+                  <div class="field-row">
+                    <div class="field-mock"><small>State</small><span>Select your state</span></div>
+                    <div class="field-mock"><small>Date of birth</small><span>MM / DD / YYYY</span></div>
+                    <div class="field-mock"><small>Height</small><span>5 ft 6 in</span></div>
+                    <div class="field-mock"><small>Weight</small><span>200 lb</span></div>
+                  </div>
+                  <div class="eligibility-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Providers are available in your state, and your BMI of about 32 is within the range a provider can evaluate for weight care. Final eligibility is confirmed by a licensed provider after intake.</span></div>
+                  <div class="proto-actions"><button class="link-btn back-btn">Back</button><button class="btn btn-primary next-btn">Continue</button></div>
+                </section>
+                <section class="proto-screen" data-screen="2">
+                  <h3>A few health questions</h3>
+                  <p>These help your provider rule out treatments that are not safe for you. Choose any that apply.</p>
+                  <div class="choice-grid">
+                    <button class="choice health"><span class="choice-dot"></span><span>Pregnant, breastfeeding, or planning pregnancy</span></button>
+                    <button class="choice health"><span class="choice-dot"></span><span>Type 1 diabetes</span></button>
+                    <button class="choice health"><span class="choice-dot"></span><span>History of pancreatitis</span></button>
+                    <button class="choice health"><span class="choice-dot"></span><span>Personal or family history of medullary thyroid cancer or MEN2</span></button>
+                    <button class="choice health"><span class="choice-dot"></span><span>History of an eating disorder</span></button>
+                    <button class="choice health selected" data-none="true"><span class="choice-dot"></span><span>None of these</span></button>
+                  </div>
+                  <p class="concept-note">The full medical history is collected in intake after a plan is chosen. These questions only keep plans from being shown to someone who cannot safely be treated.</p>
+                  <div class="proto-actions"><button class="link-btn back-btn">Back</button><button class="btn btn-primary next-btn">Continue</button></div>
+                </section>
+                <section class="proto-screen" data-screen="3">
+                  <h3>What matters most right now?</h3>
+                  <p>Pick one. It decides which plan we recommend next, and you can still choose any plan.</p>
+                  <div class="choice-grid">
+                    <button class="choice priority" data-reco="monthly"><span class="choice-dot"></span><span>Lower upfront cost</span></button>
+                    <button class="choice priority" data-reco="monthly"><span class="choice-dot"></span><span>Flexibility month to month</span></button>
+                    <button class="choice priority" data-reco="six"><span class="choice-dot"></span><span>Lower average monthly cost</span></button>
+                    <button class="choice priority selected" data-reco="quarterly"><span class="choice-dot"></span><span>More time to build habits</span></button>
+                  </div>
+                  <div class="proto-actions"><button class="link-btn back-btn">Back</button><button class="btn btn-primary next-btn" id="seeOptions">See my options</button></div>
+                </section>
+                <section class="proto-screen" data-screen="4">
+                  <h3>Choose your membership</h3>
+                  <p>All plans include online intake, licensed provider review, and ongoing support from your care team.</p>
+                  <p class="reco-why" id="recoWhy">Recommended: 3 months, because you chose “More time to build habits”. You can pick any plan.</p>
+                  <div class="plan-grid proto-plans">
+                    <button class="plan-card" data-plan="monthly"><span class="popular" hidden>Recommended for you</span><h4>Monthly</h4><div class="plan-price">$49 <span>first month</span></div><div class="plan-total">Then $135 per month</div><span class="save">Flexible start</span></button>
+                    <button class="plan-card selected" data-plan="quarterly"><span class="popular">Recommended for you</span><h4>3 months</h4><div class="plan-price">$349</div><div class="plan-total">$116.33/month, billed every 3 months</div><span class="save">$56 less than 3 months at $135</span><span class="fin">or 4 payments of $87.25 with Affirm*</span></button>
+                    <button class="plan-card" data-plan="six"><span class="popular" hidden>Recommended for you</span><h4>6 months</h4><div class="plan-price">$599</div><div class="plan-total">$99.83/month, billed every 6 months</div><span class="save">$211 less than 6 months at $135</span><span class="fin">or 4 payments of $149.75 with Affirm*</span></button>
+                  </div>
+                  <p class="concept-note">Savings compare each prepaid term with the $135 standard monthly rate. Because the monthly plan starts at $49, a new member’s first 3 months on monthly cost $319 and first 6 months cost $724, so the 6-month plan still saves $125 on that path while the 3-month plan does not save in its first term. *Illustrative pay-in-4 split; eligibility, terms, and APR are shown by Affirm at checkout. Medication cost is not part of the exercise pricing and must be confirmed before production.</p>
+                  <div class="proto-actions"><button class="link-btn back-btn">Back</button><button class="btn btn-primary next-btn" id="planContinue">Continue with 3 months</button></div>
+                </section>
+                <section class="proto-screen" data-screen="5">
+                  <h3>Save your plan and start intake</h3>
+                  <p>The account keeps your plan, your intake answers, and your provider messages in one private place. It comes after the price, not before it.</p>
+                  <div class="plan-pill"><span>Selected:</span><b id="accountPlan">3-month membership · $349</b></div>
+                  <div class="sso-row">
+                    <button class="sso-btn next-btn" type="button">Continue with Apple</button>
+                    <button class="sso-btn next-btn" type="button">Continue with Google</button>
+                  </div>
+                  <div class="divider">or use email</div>
+                  <div class="field-row">
+                    <div class="field-mock"><small>Email</small><span>you@example.com</span></div>
+                    <div class="field-mock"><small>Password</small><span>8+ characters</span></div>
+                  </div>
+                  <p class="privacy-line">Health information is encrypted and used only for your care. Text and email updates are optional.</p>
+                  <div class="proto-actions"><button class="link-btn back-btn">Back</button><button class="btn btn-primary next-btn">Continue to payment</button></div>
+                </section>
+                <section class="proto-screen" data-screen="6">
+                  <h3>Review and pay</h3>
+                  <p>Nothing is charged until you confirm. Your plan, today’s total, and renewal terms are all on this screen.</p>
+                  <div class="checkout">
+                    <div>
+                      <div class="field-mock"><small>Name on card</small><span>Enter full name</span></div>
+                      <div class="field-mock"><small>Card details</small><span>•••• •••• •••• ••••</span></div>
+                      <div class="field-mock"><small>Billing ZIP</small><span>Enter ZIP code</span></div>
+                      <div class="finance"><strong>Prefer to pay over time?</strong><br><span id="financeText">4 payments of $87.25 with Affirm, subject to eligibility. Affirm shows exact terms before you commit.</span></div>
+                    </div>
+                    <div class="order-box">
+                      <div class="order-row"><span id="summaryLabel">3-month membership</span><strong id="summaryPrice">$349</strong></div>
+                      <div class="order-row discount" id="summaryDiscountRow" hidden><span>First-month offer</span><strong id="summaryDiscount">−$86</strong></div>
+                      <div class="order-row total"><span>Due today</span><strong id="summaryDue">$349</strong></div>
+                      <div class="order-row renew"><span>Renews</span><strong id="summaryRenew">$349 every 3 months ($116.33/mo)</strong></div>
+                      <label class="consent"><input type="checkbox" checked><span id="consentText">I understand my membership renews automatically at $349 every 3 months until I cancel, and that I can cancel anytime from account settings.</span></label>
+                      <button class="btn btn-primary" id="reviewBtn" style="width:100%">Pay $349 today</button>
+                      <p class="refund-line">Not eligible after provider review? Refunded in full.</p>
+                    </div>
+                  </div>
+                  <p class="concept-note">Prototype only. No payment information is collected. The refund line reflects a recommended policy that needs confirmation before launch.</p>
+                  <div class="proto-actions"><button class="link-btn back-btn">Back</button><span></span></div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="landing">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-num">04</div><h2>Paid-acquisition landing page</h2></div>
+          <p class="section-intro">The landing page carries the same plan language as onboarding, so the promise made in the ad, the comparison made on the page, and the total shown at checkout stay consistent.</p>
+        </div>
+        <div class="landing-frame reveal">
+          <div class="lp-nav"><div class="lp-brand">zealthy</div><button class="btn btn-primary lp-scroll">See if I qualify</button></div>
+          <div class="lp-hero">
+            <div class="lp-copy">
+              <p class="context-line">Online weight-loss care · Monthly, 3-month, or 6-month plans</p>
+              <h3>Clinical weight care, from $49 for your first month.</h3>
+              <p>Prescription weight-loss treatment, including GLP-1 medications when a licensed provider determines they are appropriate, plus a care team that stays with you. Compare every plan before you create an account. No in-person visit required.</p>
+              <div class="trust-line">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Licensed providers</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>40,000+ patients served</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Clear, upfront pricing</span>
+              </div>
+              <button class="btn btn-primary lp-scroll" style="align-self:flex-start">Explore membership options</button>
+            </div>
+            <div class="lp-visual" aria-label="Illustration of supported progress over time">
+              <div class="visual-panel">
+                <p class="context-line">Your care plan</p>
+                <h4>Progress, with support.</h4>
+                <p style="color:var(--muted); margin-top:0">A clear view of milestones, provider guidance, and the next check-in.</p>
+                <div class="progress-bars" aria-hidden="true"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                <div class="coach-note"><strong>Care team check-in</strong><br>Your questions stay connected to the people supporting your plan.</div>
+              </div>
+            </div>
+          </div>
+          <div class="lp-content">
+            <div class="lp-heading"><h4>How it works</h4><p>Three steps, all online, with a licensed provider deciding what is clinically appropriate.</p></div>
+            <div class="benefits">
+              <article class="benefit"><svg width="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h4>Start online</h4><p>Complete your clinical intake online, on your schedule, from any device.</p></article>
+              <article class="benefit"><svg width="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><h4>Clinician reviewed</h4><p>A licensed provider reviews each case and determines whether treatment is clinically appropriate.</p></article>
+              <article class="benefit"><svg width="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H8l-4 4V4z"/><path d="M8 9h8M8 12h5"/></svg><h4>Supported over time</h4><p>Ongoing support from your care team helps turn a plan into a sustainable routine.</p></article>
+            </div>
+            <div class="lp-heading" id="pricing"><h4>Choose how you want to begin.</h4><p>The same care experience, with three ways to balance flexibility and value.</p></div>
+            <div class="lp-plans">
+              <article class="lp-plan" data-landing-plan="monthly"><div class="ribbon">Flexible start</div><h5>Monthly</h5><div class="big">$49 <small>first month</small></div><p style="color:var(--muted)">Then $135 per month.</p><ul><li>Lowest upfront cost</li><li>Month-to-month renewal</li><li>Ongoing care team support</li></ul><button class="btn btn-secondary select-landing" data-plan="monthly">Choose monthly</button></article>
+              <article class="lp-plan selected" data-landing-plan="quarterly"><div class="ribbon">Balanced choice</div><h5>3 months</h5><div class="big">$349</div><p style="color:var(--muted)">$116.33/month, billed every 3 months.</p><ul><li>$56 less than 3 months at $135</li><li>Or 4 payments of $87.25 with Affirm*</li><li>Ongoing care team support</li></ul><button class="btn btn-primary select-landing" data-plan="quarterly">Selected: 3 months</button></article>
+              <article class="lp-plan" data-landing-plan="six"><div class="ribbon">Lowest monthly equivalent</div><h5>6 months</h5><div class="big">$599</div><p style="color:var(--muted)">$99.83/month, billed every 6 months.</p><ul><li>$211 less than 6 months at $135</li><li>Or 4 payments of $149.75 with Affirm*</li><li>Ongoing care team support</li></ul><button class="btn btn-secondary select-landing" data-plan="six">Choose 6 months</button></article>
+            </div>
+            <p class="landing-selected" id="landingSelected">3-month plan selected. Continue to intake when ready.</p>
+            <div class="lp-start"><button class="btn btn-primary" id="landingStart" data-jump="flow">Start my intake with the 3-month plan</button></div>
+            <p class="lp-fineprint">Every plan renews automatically at the same price until you cancel. Cancel anytime before your renewal date from account settings.</p>
+            <div class="faq">
+              <h4>Questions people ask before they start</h4>
+              <details><summary>Do I qualify?</summary><p>Eligibility depends on your state, age, BMI, and health history. You see the basics before any plan is shown, and a licensed provider makes the final decision after your intake.</p></details>
+              <details><summary>What is the $49?</summary><p>Your first month on the monthly plan is $49, then it renews at $135 per month. The 3-month and 6-month plans are billed once per term at $349 and $599.</p></details>
+              <details><summary>What happens after I choose a plan?</summary><p>You create an account, complete a short online intake, and a licensed provider reviews it. If treatment is clinically appropriate, your care plan follows, with ongoing support from your care team.</p></details>
+              <details><summary>Can I cancel?</summary><p>Yes. Monthly memberships renew each month, and 3- and 6-month memberships renew at the end of the term. Cancel anytime before your renewal date from account settings.</p></details>
+              <details><summary>What if a provider decides treatment is not right for me?</summary><p>Provider review happens before any treatment starts. If care is not appropriate, you are told why and refunded in full.</p></details>
+              <details><summary>Is medication included in the price?</summary><p>Membership pricing covers your clinical care, provider review, and care team support. If medication is prescribed, its cost is shown before you pay, never after.</p></details>
+            </div>
+            <div class="lp-footer">
+              <h4>Ready when you are.</h4>
+              <button class="btn btn-primary lp-scroll">Compare plans</button>
+              <p>Prescription products require an online consultation with a licensed healthcare provider, who determines whether a prescription is appropriate. Individual results vary. Availability varies by state.</p>
+              <div class="links">Privacy · Terms · Telehealth consent</div>
+            </div>
+          </div>
+        </div>
+        <p class="concept-note" style="text-align:center; max-width:760px; margin:18px auto 0">Savings compare prepaid terms with the $135 recurring monthly rate. Treatment is subject to provider review. Because the monthly plan starts at $49, a new member’s first 3 months on monthly cost $319 and first 6 months cost $724. *Illustrative pay-in-4 split; eligibility, terms, and APR are shown by Affirm at checkout. Medication pricing, refund and cancellation terms, the patient count, and care-team inclusions require confirmation with clinical, legal, and marketing teams before this page is published.</p>
+      </div>
+    </section>
+
+    <section class="section alt" id="rationale">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-num">05</div><h2>Why the flow is structured this way</h2></div>
+          <p class="section-intro">The design treats trust and comprehension as conversion inputs. It gives each page one job, while keeping price language and the selected plan consistent from ad click to review.</p>
+        </div>
+        <div class="journey-map">
+          <article class="journey-stage reveal"><h3>Land</h3><p>Connect the ad promise to clinical support, process, and a visible plan range.</p><div class="metric">Measure: CTA engagement</div></article>
+          <article class="journey-stage reveal"><h3>Understand</h3><p>Clarify what is included and how licensed provider review works.</p><div class="metric">Measure: qualified starts</div></article>
+          <article class="journey-stage reveal"><h3>Compare</h3><p>Show all terms with the same price anatomy before asking for an account.</p><div class="metric">Measure: plan comprehension</div></article>
+          <article class="journey-stage reveal"><h3>Commit</h3><p>Carry the choice into checkout and offer financing without unverified promises.</p><div class="metric">Measure: checkout completion</div></article>
+        </div>
+        <div class="decision-table" aria-label="Design decision rationale">
+          <div class="decision-row"><strong>Move pricing before account creation</strong><p><b>Reason:</b> people can evaluate the offer before giving personal information.</p><p><b>Risk to test:</b> fewer early account captures may reduce retargeting volume.</p></div>
+          <div class="decision-row"><strong>Confirm eligibility before showing plans</strong><p><b>Reason:</b> state licensing and BMI decide whether care is available at all, so asking first avoids selling a plan that provider review will reverse.</p><p><b>Risk to test:</b> personal questions this early may lower continuation, so the copy has to explain why each one is asked.</p></div>
+          <div class="decision-row"><strong>Say “Recommended for you” and show why</strong><p><b>Reason:</b> the recommendation follows the one priority the person picked and names it, so it reads as help rather than a universal “best value” claim.</p><p><b>Risk to test:</b> recommendation language may still anchor selection; compare against no label.</p></div>
+          <div class="decision-row"><strong>Quote savings against the $135 standard rate, not the $49 offer</strong><p><b>Reason:</b> the $49 first month makes monthly cheaper than the 3-month plan for a new member’s first term ($319 versus $349) and narrows the 6-month saving to $125, so every savings figure names the rate it compares against.</p><p><b>Risk to test:</b> price-aware users will do the promo math; options are a first-term credit on prepaid plans or recommending 6 months by default.</p></div>
+          <div class="decision-row"><strong>Keep total and monthly equivalent together</strong><p><b>Reason:</b> supports comparison while preserving the real amount due.</p><p><b>Risk to test:</b> some users may mistake the equivalent for an installment.</p></div>
+          <div class="decision-row"><strong>Add Affirm as an optional path</strong><p><b>Reason:</b> addresses heavier upfront pricing for longer plans.</p><p><b>Risk to test:</b> eligibility, APR, and approval language must come from the provider.</p></div>
+          <div class="decision-row"><strong>Capture auto-renewal consent at checkout</strong><p><b>Reason:</b> the renewal price and cadence sit next to the total with an explicit checkbox, which is what negative-option and state auto-renewal rules expect.</p><p><b>Risk to test:</b> extra checkout friction; measure completion against a disclosure-only version.</p></div>
+          <div class="decision-row"><strong>Show product facts as placeholders</strong><p><b>Reason:</b> intake length, provider turnaround, coaching inclusions, and the patient count come from public materials, not from the product team, so they are marked for verification rather than asserted.</p><p><b>Production need:</b> replace each with Zealthy’s verified figure before publication.</p></div>
+          <div class="decision-row"><strong>State medication-price uncertainty</strong><p><b>Reason:</b> the exercise provides membership prices but does not define whether medication is included.</p><p><b>Production need:</b> confirm inclusions, renewals, cancellation, refund, and financing terms.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="metrics">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-num">06</div><h2>Measure and roll out</h2></div>
+          <p class="section-intro">Three plan lengths change cash flow, refund exposure, and retention, not only conversion. The rollout has to prove the pricing-first flow earns more paying members without creating a refund or support problem later.</p>
+        </div>
+        <div class="research-grid two">
+          <article class="finding opportunity reveal"><span class="tag">Primary metrics</span><h3>Paid conversion and plan mix</h3><p>Paid members per 100 landing visits, plan-select to payment completion, and the share choosing 3- or 6-month terms. Success is more paid members per visit with a plan mix that lifts the average first payment without raising refunds.</p></article>
+          <article class="finding opportunity reveal"><span class="tag">Guardrails</span><h3>Refunds, eligibility fails, support</h3><p>Refund and chargeback rate by plan, payments reversed because a provider declined treatment, and support contacts per 100 checkouts. Any of these rising against the current flow pauses the rollout.</p></article>
+          <article class="finding neutral reveal"><span class="tag">Experiments</span><h3>Three tests, in order</h3><p>1. Pricing-first flow against the current account-first flow, split by traffic source. 2. The "Balanced choice" label against no recommendation. 3. Affirm shown on 3- and 6-month plans only against every plan.</p></article>
+          <article class="finding neutral reveal"><span class="tag">Open questions</span><h3>Decisions needed before launch</h3><p>Whether medication cost sits inside membership pricing, the refund rule when a provider declines treatment, whether the $49 first month applies only to monthly, Affirm merchant terms, and which states are covered on day one.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="talk-track">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-num">07</div><h2>How I would walk you through it</h2></div>
+          <p class="section-intro">The story moves from the business problem to the person experiencing it, then into the design and the decisions that still need validation.</p>
+        </div>
+        <div class="talk-grid">
+          <div class="agenda">
+            <div class="agenda-item"><div class="agenda-num">01</div><div><h3>Frame the challenge</h3><p>Introduce the three-term pricing brief and the tension between affordability, commitment, and trust.</p></div><span class="time-pill">2 min</span></div>
+            <div class="agenda-item"><div class="agenda-num">02</div><div><h3>Show the observed journey</h3><p>Walk through goals, the early discount, and the account wall. Separate observation from assumption.</p></div><span class="time-pill">4 min</span></div>
+            <div class="agenda-item"><div class="agenda-num">03</div><div><h3>Introduce the proto-persona</h3><p>Explain the cautious comparator and the four needs shaping the solution.</p></div><span class="time-pill">3 min</span></div>
+            <div class="agenda-item"><div class="agenda-num">04</div><div><h3>Demo the redesigned flow</h3><p>Move from goals, eligibility, and safety questions to priorities, compare all plans, create the account, then show continuity at payment.</p></div><span class="time-pill">8 min</span></div>
+            <div class="agenda-item"><div class="agenda-num">05</div><div><h3>Walk the landing page</h3><p>Connect ad intent to clinical trust, program value, and transparent pricing.</p></div><span class="time-pill">5 min</span></div>
+            <div class="agenda-item"><div class="agenda-num">06</div><div><h3>Close with validation</h3><p>Name the open content questions, test plan, success measures, and next iteration.</p></div><span class="time-pill">4 min</span></div>
+          </div>
+          <aside class="story-card">
+            <h3>The one-sentence story</h3>
+            <p>This redesign shifts Zealthy's signup from urgency-first to confidence-first, while making three commitment levels easy to compare and easy to carry through checkout.</p>
+            <ol>
+              <li>Show what is known.</li>
+              <li>Label what is assumed.</li>
+              <li>Explain each design choice.</li>
+              <li>End with what should be tested.</li>
+            </ol>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources alt">
+      <div class="wrap">
+        <h3>Sources and scope</h3>
+        <div class="source-list">
+          <a class="source" href="https://docs.google.com/document/d/1Ug0PUvGT3jXJhqG2tBZBT6lMYOa-8ULGMQx_oyPXqFY/edit?tab=t.0" target="_blank" rel="noopener"><strong>Zealthy exercise brief</strong><span>Provided prompt, pricing, deliverables, and design constraints</span></a>
+          <a class="source" href="https://drive.google.com/file/d/1VXI3QasU0A4Tkrs0-tXcbdQvJm_ADdq9/view" target="_blank" rel="noopener"><strong>Zealthy One Pager</strong><span>Mission, founder background, scale, and culture context</span></a>
+          <a class="source" href="http://try.getzealthy.com/weight-loss" target="_blank" rel="noopener"><strong>Existing weight-loss landing page</strong><span>Reference for program claims: intake time, provider review, coaching</span></a>
+          <a class="source" href="https://www.figma.com/file/JSAmqL22QW91izU0GrTIqn/Patient-Facing-Flows?node-id=365%3A4137&t=wUKQ9O01MkNlHKi5-1" target="_blank" rel="noopener"><strong>Patient-facing flows</strong><span>Provided Figma reference. Access requested September 17, 2026, pending at submission</span></a>
+        </div>
+        <p class="footer-note">Observed flow review completed September 16, 2026. This concept intentionally avoids unsupported medication-price, financing-rate, efficacy, and eligibility claims. No user accounts, payment data, or health data are collected in this prototype. Intake length, provider-review turnaround, patient count, and care-team inclusions are placeholders marked for verification with Zealthy’s clinical and marketing teams.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" role="status" aria-live="polite" id="toast"></div>
+
+  <script>
+    const screens = [...document.querySelectorAll('.proto-screen')];
+    const tabs = [...document.querySelectorAll('.step-tab')];
+    const progressText = document.getElementById('progressText');
+    const designNote = document.getElementById('designNote');
+    const notes = [
+      '<strong>Why this screen:</strong> Use inclusive goals to personalize the journey without implying a diagnosis or treatment.',
+      '<strong>Why this screen:</strong> Confirm state licensing and BMI eligibility before anyone invests time or compares prices. Ask only what eligibility needs.',
+      '<strong>Why this screen:</strong> Five safety questions surface contraindications early, without a forty-question intake before pricing.',
+      '<strong>Why this screen:</strong> Ask one decision-relevant question. The answer drives the recommendation on the next screen, and it is explained, not enforced.',
+      '<strong>Why this screen:</strong> Reveal every plan before account creation and keep total due beside the monthly equivalent.',
+      '<strong>Why this screen:</strong> Create the account after the plan is chosen, so it protects intake answers and provider messages instead of gating the price.',
+      '<strong>Why this screen:</strong> Keep the plan, what is due today, and what renews later on one screen. Capture auto-renewal consent before payment and frame financing as optional and eligibility-based.'
+    ];
+    let currentStep = 0;
+    let selectedPlan = 'quarterly';
+    const planData = {
+      monthly: { label: 'Monthly membership', price: '$135', discount: '−$86', due: '$49', renew: '$135 every month after the first', finance: 'Affirm is available on 3- and 6-month plans. The $49 first month is paid by card.', name: 'monthly', short: 'monthly', consent: 'I understand my membership renews automatically at $135 each month after the first month until I cancel, and that I can cancel anytime from account settings.', pill: 'Monthly membership · $49 first month', button: 'Continue with monthly', landing: 'Monthly plan selected. First month is $49, then $135 per month.' },
+      quarterly: { label: '3-month membership', price: '$349', discount: '', due: '$349', renew: '$349 every 3 months ($116.33/mo)', finance: '4 payments of $87.25 with Affirm, subject to eligibility. Affirm shows exact terms before you commit.', name: '3 months', short: '3-month', consent: 'I understand my membership renews automatically at $349 every 3 months until I cancel, and that I can cancel anytime from account settings.', pill: '3-month membership · $349', button: 'Continue with 3 months', landing: '3-month plan selected. Continue to intake when ready.' },
+      six: { label: '6-month membership', price: '$599', discount: '', due: '$599', renew: '$599 every 6 months ($99.83/mo)', finance: '4 payments of $149.75 with Affirm, subject to eligibility. Affirm shows exact terms before you commit.', name: '6 months', short: '6-month', consent: 'I understand my membership renews automatically at $599 every 6 months until I cancel, and that I can cancel anytime from account settings.', pill: '6-month membership · $599', button: 'Continue with 6 months', landing: '6-month plan selected. Continue to intake when ready.' }
+    };
+
+    function showStep(index) {
+      currentStep = Math.max(0, Math.min(index, screens.length - 1));
+      screens.forEach((screen, i) => screen.classList.toggle('active', i === currentStep));
+      tabs.forEach((tab, i) => tab.setAttribute('aria-selected', String(i === currentStep)));
+      progressText.textContent = `Step ${currentStep + 1} of ${screens.length}`;
+      designNote.innerHTML = notes[currentStep];
+    }
+    tabs.forEach(tab => tab.addEventListener('click', () => showStep(Number(tab.dataset.step))));
+    document.querySelectorAll('.next-btn').forEach(btn => btn.addEventListener('click', () => showStep(currentStep + 1)));
+    document.querySelectorAll('.back-btn').forEach(btn => btn.addEventListener('click', () => showStep(currentStep - 1)));
+    document.querySelectorAll('.choice:not(.priority):not(.health)').forEach(choice => choice.addEventListener('click', () => choice.classList.toggle('selected')));
+    const healthChips = [...document.querySelectorAll('.choice.health')];
+    healthChips.forEach(chip => chip.addEventListener('click', () => {
+      if (chip.dataset.none) { healthChips.forEach(c => c.classList.toggle('selected', c === chip)); return; }
+      chip.classList.toggle('selected');
+      healthChips.find(c => c.dataset.none).classList.toggle('selected', !healthChips.some(c => !c.dataset.none && c.classList.contains('selected')));
+    }));
+    const priorityChips = [...document.querySelectorAll('.choice.priority')];
+    priorityChips.forEach(chip => chip.addEventListener('click', () => priorityChips.forEach(c => c.classList.toggle('selected', c === chip))));
+    function recommend() {
+      const chip = priorityChips.find(c => c.classList.contains('selected')) || priorityChips[3];
+      const reco = chip.dataset.reco;
+      document.querySelectorAll('.proto-plans .plan-card').forEach(card => { card.querySelector('.popular').hidden = card.dataset.plan !== reco; });
+      document.getElementById('recoWhy').textContent = `Recommended: ${planData[reco].name}, because you chose “${chip.textContent.trim()}”. You can pick any plan.`;
+      syncPrototypePlan(reco);
+    }
+    document.getElementById('seeOptions').addEventListener('click', recommend);
+
+    function syncPrototypePlan(plan) {
+      selectedPlan = plan;
+      document.querySelectorAll('.proto-plans .plan-card').forEach(card => card.classList.toggle('selected', card.dataset.plan === plan));
+      const data = planData[plan];
+      document.getElementById('planContinue').textContent = data.button;
+      document.getElementById('summaryLabel').textContent = data.label;
+      document.getElementById('summaryPrice').textContent = data.price;
+      document.getElementById('summaryDue').textContent = data.due;
+      document.getElementById('summaryDiscountRow').hidden = !data.discount;
+      document.getElementById('summaryDiscount').textContent = data.discount;
+      document.getElementById('summaryRenew').textContent = data.renew;
+      document.getElementById('financeText').textContent = data.finance;
+      document.getElementById('landingStart').textContent = `Start my intake with the ${data.short} plan`;
+      document.getElementById('consentText').textContent = data.consent;
+      document.getElementById('accountPlan').textContent = data.pill;
+      document.getElementById('reviewBtn').textContent = `Pay ${data.due} today`;
+    }
+    document.querySelectorAll('.proto-plans .plan-card').forEach(card => card.addEventListener('click', () => syncPrototypePlan(card.dataset.plan)));
+
+    function selectLandingPlan(plan) {
+      document.querySelectorAll('.lp-plan').forEach(card => {
+        const chosen = card.dataset.landingPlan === plan;
+        card.classList.toggle('selected', chosen);
+        const btn = card.querySelector('.select-landing');
+        btn.className = `btn ${chosen ? 'btn-primary' : 'btn-secondary'} select-landing`;
+        const labels = { monthly: 'monthly', quarterly: '3 months', six: '6 months' };
+        btn.textContent = chosen ? `Selected: ${labels[plan]}` : `Choose ${labels[card.dataset.landingPlan]}`;
+      });
+      document.getElementById('landingSelected').textContent = planData[plan].landing;
+      syncPrototypePlan(plan);
+    }
+    document.querySelectorAll('.select-landing').forEach(btn => btn.addEventListener('click', () => selectLandingPlan(btn.dataset.plan)));
+    document.querySelectorAll('.lp-scroll').forEach(btn => btn.addEventListener('click', () => document.getElementById('pricing').scrollIntoView({ behavior: 'smooth', block: 'start' })));
+    document.querySelectorAll('[data-jump="flow"]').forEach(btn => btn.addEventListener('click', () => { showStep(0); document.getElementById('flow').scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+
+    const toast = document.getElementById('toast');
+    let toastTimer;
+    document.getElementById('reviewBtn').addEventListener('click', () => {
+      toast.textContent = `Prototype only: ${planData[selectedPlan].due} for the ${planData[selectedPlan].label.toLowerCase()} would be charged here. No payment was collected.`;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+    });
+
+    window.addEventListener('beforeprint', () => document.querySelectorAll('.faq details').forEach(d => { d.open = true; }));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
