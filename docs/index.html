@@ -19,7 +19,8 @@
       --surface-3: #e4eee7;
       --ink: #16241c;
       --muted: #4d6254;
-      --faint: #75857a;
+      --faint: #5f7166;
+      --on-brand: #fff;
       --line: #cfdbd2;
       --brand: #0b6b4f;
       --brand-strong: #07513c;
@@ -44,6 +45,7 @@
         --ink: #f1f7f3;
         --muted: #b9c8bd;
         --faint: #90a095;
+        --on-brand: #0b2017;
         --line: #36483b;
         --brand: #78d9b5;
         --brand-strong: #a5edcf;
@@ -68,6 +70,7 @@
     }
     button, input { font: inherit; }
     a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
     svg { display: block; }
     .skip { position: fixed; left: 16px; top: 16px; z-index: 100; padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; transform: translateY(-180%); }
     .skip:focus { transform: translateY(0); }
@@ -93,11 +96,11 @@
     .case-label span { color: var(--brand); }
     .navlinks { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
     .navlinks a { text-decoration: none; color: var(--muted); font-size: .86rem; font-weight: 600; padding: 7px 10px; border-radius: 8px; }
-    .navlinks a:hover, .navlinks a:focus-visible { color: var(--ink); background: var(--surface-2); outline: none; }
+    .navlinks a:hover, .navlinks a:focus-visible { color: var(--ink); background: var(--surface-2); }
     main { display: block; }
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
     .hero { padding: 76px 0 68px; position: relative; overflow: clip; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr); gap: 60px; align-items: center; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(420px, .92fr); gap: 60px; align-items: center; }
     .context-line { color: var(--brand); font-weight: 700; margin: 0 0 15px; }
     h1, h2, h3 { margin-top: 0; }
     h1, h2 { font-family: "Newsreader", serif; letter-spacing: -.035em; }
@@ -119,8 +122,7 @@
       transition: background .2s ease, color .2s ease, transform .2s ease;
     }
     .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--brand); color: #fff; }
-    @media (prefers-color-scheme: dark) { .btn-primary { color: #0b2017; } }
+    .btn-primary { background: var(--brand); color: var(--on-brand); }
     .btn-primary:hover { background: var(--brand-strong); }
     .btn-secondary { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
     .hero-meta { margin-top: 34px; display: flex; gap: 12px 28px; flex-wrap: wrap; color: var(--faint); font-size: .88rem; }
@@ -147,7 +149,7 @@
     .mini-plan { border: 1px solid var(--line); padding: 14px; border-radius: 14px; margin: 11px 0; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
     .mini-plan.selected { border: 2px solid var(--brand); background: var(--brand-soft); }
     .mini-plan span { display: block; }
-    .mini-plan small { color: var(--muted); }
+    .mini-plan small { display: block; color: var(--muted); font-size: .78rem; }
     .mini-plan strong { font-size: .9rem; }
     .phone .btn { width: 100%; margin-top: 14px; font-size: .9rem; }
     .annotation {
@@ -163,8 +165,10 @@
       color: var(--muted);
     }
     .annotation strong { color: var(--ink); display: block; margin-bottom: 3px; }
-    .ann-one { top: 13%; right: -8px; }
-    .ann-two { left: -6px; bottom: 8%; }
+    .phone { justify-self: end; }
+    .ann-one { top: -10px; right: -8px; }
+    .ann-two { left: -6px; bottom: 8%; width: 170px; }
+    @media (max-width: 1100px) { .ann-two { width: 150px; font-size: .72rem; left: -14px; } }
     .section { padding: 92px 0; }
     .section.alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .section-head { display: grid; grid-template-columns: .7fr 1.3fr; gap: 48px; align-items: start; margin-bottom: 48px; }
@@ -188,7 +192,7 @@
     .evidence-step p { margin: 0; color: var(--muted); font-size: .9rem; }
     .persona-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 28px; }
     .persona-card { background: var(--ink); color: var(--canvas); border-radius: var(--radius-xl); padding: 32px; }
-    @media (prefers-color-scheme: dark) { .persona-card { background: #eff8f1; color: #132019; } }
+    @media (prefers-color-scheme: dark) { .persona-card { background: #eff8f1; color: #132019; } .persona-card .label { color: #9a4a12; } }
     .persona-card .label { color: var(--signal); font-weight: 700; font-size: .83rem; }
     .persona-card h3 { font-family: "Newsreader", serif; font-size: 2.6rem; line-height: 1; margin: 20px 0; }
     .persona-card p { opacity: .78; }
@@ -210,7 +214,7 @@
     .step-tab { width: 100%; border: 1px solid var(--line); background: var(--surface); color: var(--muted); padding: 13px 14px; border-radius: 10px; cursor: pointer; text-align: left; font-weight: 600; display: flex; gap: 10px; align-items: center; }
     .step-tab > span:first-child { display: inline-grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; background: var(--surface-2); font-size: .76rem; flex: 0 0 auto; }
     .step-tab[aria-selected="true"] { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
-    .step-tab[aria-selected="true"] > span:first-child { background: var(--brand); color: #fff; }
+    .step-tab[aria-selected="true"] > span:first-child { background: var(--brand); color: var(--on-brand); }
     @media (prefers-color-scheme: dark) { .step-tab[aria-selected="true"] { background: #eef7f0; color: #152019; } }
     .design-note { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 20px; color: var(--muted); font-size: .9rem; }
     .prototype-shell { background: var(--surface-2); border-radius: var(--radius-xl); min-height: 670px; display: grid; place-items: center; padding: 36px; }
@@ -236,8 +240,8 @@
     .plan-card { position: relative; padding: 19px 16px; border: 1px solid var(--line); background: var(--surface); border-radius: 15px; color: var(--ink); text-align: left; cursor: pointer; min-height: 190px; }
     .plan-card:hover, .plan-card.selected { border-color: var(--brand); }
     .plan-card.selected { background: var(--brand-soft); box-shadow: inset 0 0 0 1px var(--brand); }
-    .plan-card .popular { display: inline-block; background: var(--brand); color: #fff; font-size: .67rem; font-weight: 700; padding: 4px 7px; border-radius: 6px; margin-bottom: 11px; }
-    .plan-card h4 { margin: 0 0 8px; font-size: .9rem; }
+    .plan-card .popular { display: inline-block; background: var(--brand); color: var(--on-brand); font-size: .67rem; font-weight: 700; padding: 4px 7px; border-radius: 6px; margin-bottom: 11px; }
+    .plan-card .plan-name { display: block; font-weight: 700; margin: 0 0 8px; font-size: .9rem; }
     .plan-price { font-family: "Newsreader", serif; font-size: 1.65rem; line-height: 1; }
     .plan-price span { font-family: "DM Sans", sans-serif; color: var(--muted); font-size: .72rem; }
     .plan-total { color: var(--muted); font-size: .76rem; margin-top: 6px; }
@@ -252,6 +256,17 @@
     .finance { border: 1px dashed var(--brand); border-radius: 9px; padding: 10px 11px; margin-top: 12px; font-size: .76rem; color: var(--muted); }
     .concept-note { font-size: .74rem; color: var(--faint); margin: 12px 0 0; }
     .research-grid.two { grid-template-columns: repeat(2, 1fr); }
+    .sub-heading { font-family: "Newsreader", serif; font-size: 1.9rem; line-height: 1.05; margin: 52px 0 0; }
+    .sub-heading + .principles { margin-top: 22px; }
+    .cost-details { margin: 2px 0 0; }
+    .cost-details summary { cursor: pointer; font-weight: 700; font-size: .84rem; color: var(--brand); list-style: none; }
+    .cost-details summary::-webkit-details-marker { display: none; }
+    .cost-details summary:before { content: "+ "; }
+    .cost-details[open] summary:before { content: "\2013 "; }
+    .cost-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: .8rem; }
+    .cost-table th, .cost-table td { text-align: left; padding: 7px 6px; border-bottom: 1px solid var(--line); }
+    .cost-table th { color: var(--faint); font-weight: 600; }
+    .cost-table td.best { color: var(--brand); font-weight: 700; }
     .format-note { padding: 20px 22px; background: var(--brand-soft); border-radius: 10px; color: var(--ink); margin-bottom: 14px; }
     .format-note strong { color: var(--brand); }
     .reco-why { font-size: .82rem; color: var(--brand); font-weight: 600; margin: -4px 0 0; }
@@ -344,7 +359,7 @@
     .decision-row strong { font-size: .9rem; }
     .talk-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 34px; }
     .agenda { border-top: 1px solid var(--line); }
-    .agenda-item { display: grid; grid-template-columns: 62px 1fr auto; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line); align-items: start; }
+    .agenda-item { display: grid; grid-template-columns: 62px 1fr; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line); align-items: start; }
     .agenda-num { color: var(--brand); font-weight: 700; }
     .agenda-item h3 { font-size: 1rem; margin-bottom: 4px; }
     .agenda-item p { color: var(--muted); margin: 0; font-size: .88rem; }
@@ -360,7 +375,7 @@
     .source strong { display: block; font-size: .9rem; }
     .source span { display: block; color: var(--muted); font-size: .78rem; margin-top: 3px; overflow-wrap: anywhere; }
     .footer-note { margin-top: 34px; color: var(--faint); font-size: .8rem; }
-    .toast { position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 20px); background: var(--ink); color: var(--canvas); padding: 12px 16px; border-radius: 10px; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transition: .2s ease; z-index: 50; text-align: center; max-width: calc(100vw - 32px); }
+    .toast { position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 20px); background: var(--ink); color: var(--canvas); padding: 12px 16px; border-radius: 10px; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transition: .2s ease; z-index: 50; text-align: center; width: max-content; max-width: calc(100vw - 32px); }
     .toast.show { opacity: 1; transform: translate(-50%, 0); }
     .reveal { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
@@ -372,10 +387,12 @@
       .hero-grid, .section-head, .persona-grid, .flow-layout, .talk-grid { grid-template-columns: 1fr; }
       .hero { padding-top: 52px; }
       .phone-stage { min-height: 600px; }
-      .flow-aside { position: static; }
-      .step-tabs { grid-template-columns: repeat(7, 1fr); }
-      .step-tab { justify-content: center; padding: 11px 8px; }
-      .step-tab .tab-copy { display: none; }
+      .phone { justify-self: center; }
+      .flow-aside { position: static; min-width: 0; }
+      .step-tabs { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+      .step-tabs::-webkit-scrollbar { display: none; }
+      .step-tab { flex: 1 0 44px; justify-content: center; padding: 11px 8px; position: relative; }
+      .step-tab .tab-copy { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
       .principles, .journey-map { grid-template-columns: repeat(2, 1fr); }
       .lp-hero { grid-template-columns: 1fr; }
       .lp-copy { padding: 50px 34px; }
@@ -400,11 +417,10 @@
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; }
       .hero-meta { display: grid; grid-template-columns: 1fr 1fr; }
-      .phone-stage { min-height: 565px; }
-      .phone { width: 286px; min-height: 540px; }
-      .annotation { width: 150px; font-size: .72rem; }
-      .ann-one { top: 8%; right: -4px; }
-      .ann-two { left: -2px; bottom: 2%; }
+      .phone-stage { grid-template-columns: 1fr 1fr; gap: 12px 8px; align-content: start; min-height: 0; }
+      .phone { grid-column: 1 / -1; width: 286px; min-height: 540px; justify-self: center; }
+      .annotation { position: static; width: auto; justify-self: stretch; font-size: .72rem; }
+      .orbit { inset: 0 0 auto; height: 420px; }
       .section { padding: 64px 0; }
       .section-head { gap: 14px; margin-bottom: 34px; }
       h2 { font-size: 2.85rem; }
@@ -413,7 +429,7 @@
       .evidence-strip { border-radius: 16px; }
       .evidence-step + .evidence-step { border-left: 0; border-top: 1px solid var(--line); }
       .persona-card { padding: 26px; }
-      .step-tabs { grid-template-columns: repeat(7, 1fr); gap: 4px; }
+      .step-tabs { gap: 5px; }
       .prototype-shell { margin: 0 -17px; border-radius: 0; padding: 14px; min-height: auto; }
       .prototype { border-radius: 18px; }
       .proto-body { padding: 26px 18px 28px; min-height: 600px; }
@@ -434,6 +450,11 @@
     }
     @media print {
       @page { margin: 14mm; }
+      :root { --canvas: #fff; --surface: #fff; --surface-2: #f2f6f3; --surface-3: #e4eee7; --ink: #16241c; --muted: #4d6254; --faint: #5f7166; --line: #cfdbd2; --brand: #0b6b4f; --brand-strong: #07513c; --brand-soft: #d8eee5; --signal: #f5a675; --signal-soft: #fff0e8; --gold: #8e6521; --on-brand: #fff; --shadow: none; --shadow-sm: none; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .persona-card { background: var(--ink); color: var(--canvas); }
+      .persona-card .label { color: var(--signal); }
+      .cost-details summary:before { content: ""; }
       html { overflow: visible; }
       body { background: #fff; color: #16241c; }
       .topnav, .skip, .toast, .hero-actions, .step-tabs, .flow-aside > p, .orbit, .annotation, .lp-scroll { display: none !important; }
@@ -579,22 +600,22 @@
             <h3>Interactive concept</h3>
             <p class="section-intro">Select a screen or use the prototype controls. Choices are temporary and exist only for this walkthrough.</p>
             <div class="step-tabs" role="tablist" aria-label="Prototype steps">
-              <button class="step-tab" role="tab" aria-selected="true" data-step="0"><span>1</span><span class="tab-copy">Goals</span></button>
-              <button class="step-tab" role="tab" aria-selected="false" data-step="1"><span>2</span><span class="tab-copy">Basics</span></button>
-              <button class="step-tab" role="tab" aria-selected="false" data-step="2"><span>3</span><span class="tab-copy">Health</span></button>
-              <button class="step-tab" role="tab" aria-selected="false" data-step="3"><span>4</span><span class="tab-copy">Priorities</span></button>
-              <button class="step-tab" role="tab" aria-selected="false" data-step="4"><span>5</span><span class="tab-copy">Plan</span></button>
-              <button class="step-tab" role="tab" aria-selected="false" data-step="5"><span>6</span><span class="tab-copy">Account</span></button>
-              <button class="step-tab" role="tab" aria-selected="false" data-step="6"><span>7</span><span class="tab-copy">Payment</span></button>
+              <button class="step-tab" type="button" role="tab" id="tab-0" aria-controls="screen-0" aria-selected="true" tabindex="0" data-step="0"><span>1</span><span class="tab-copy">Goals</span></button>
+              <button class="step-tab" type="button" role="tab" id="tab-1" aria-controls="screen-1" aria-selected="false" tabindex="-1" data-step="1"><span>2</span><span class="tab-copy">Basics</span></button>
+              <button class="step-tab" type="button" role="tab" id="tab-2" aria-controls="screen-2" aria-selected="false" tabindex="-1" data-step="2"><span>3</span><span class="tab-copy">Health</span></button>
+              <button class="step-tab" type="button" role="tab" id="tab-3" aria-controls="screen-3" aria-selected="false" tabindex="-1" data-step="3"><span>4</span><span class="tab-copy">Priorities</span></button>
+              <button class="step-tab" type="button" role="tab" id="tab-4" aria-controls="screen-4" aria-selected="false" tabindex="-1" data-step="4"><span>5</span><span class="tab-copy">Plan</span></button>
+              <button class="step-tab" type="button" role="tab" id="tab-5" aria-controls="screen-5" aria-selected="false" tabindex="-1" data-step="5"><span>6</span><span class="tab-copy">Account</span></button>
+              <button class="step-tab" type="button" role="tab" id="tab-6" aria-controls="screen-6" aria-selected="false" tabindex="-1" data-step="6"><span>7</span><span class="tab-copy">Payment</span></button>
             </div>
             <p class="design-note" id="designNote"><strong>Why this screen:</strong> Use inclusive goals to personalize the journey without implying a diagnosis or treatment.</p>
           </aside>
 
           <div class="prototype-shell">
-            <div class="prototype" aria-live="polite">
-              <div class="proto-head"><div class="proto-brand">zealthy</div><div class="proto-progress" id="progressText">Step 1 of 7</div></div>
+            <div class="prototype">
+              <div class="proto-head"><div class="proto-brand">zealthy</div><div class="proto-progress" id="progressText" aria-live="polite">Step 1 of 7</div></div>
               <div class="proto-body">
-                <section class="proto-screen active" data-screen="0">
+                <section class="proto-screen active" id="screen-0" role="tabpanel" aria-labelledby="tab-0" tabindex="-1" data-screen="0">
                   <h3>What would you like help with?</h3>
                   <p>Choose any that matter to you. Your answers help us shape the next steps.</p>
                   <div class="choice-grid">
@@ -605,7 +626,7 @@
                   </div>
                   <div class="proto-actions"><button class="link-btn" disabled>Back</button><button class="btn btn-primary next-btn">Continue</button></div>
                 </section>
-                <section class="proto-screen" data-screen="1">
+                <section class="proto-screen" id="screen-1" role="tabpanel" aria-labelledby="tab-1" tabindex="-1" data-screen="1">
                   <h3>A few basics, so we only show care you can get</h3>
                   <p>Providers are licensed by state, and weight care eligibility depends on BMI. Checking this now means nobody compares prices for care they cannot receive.</p>
                   <div class="field-row">
@@ -617,7 +638,7 @@
                   <div class="eligibility-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Providers are available in your state, and your BMI of about 32 is within the range a provider can evaluate for weight care. Final eligibility is confirmed by a licensed provider after intake.</span></div>
                   <div class="proto-actions"><button class="link-btn back-btn">Back</button><button class="btn btn-primary next-btn">Continue</button></div>
                 </section>
-                <section class="proto-screen" data-screen="2">
+                <section class="proto-screen" id="screen-2" role="tabpanel" aria-labelledby="tab-2" tabindex="-1" data-screen="2">
                   <h3>A few health questions</h3>
                   <p>These help your provider rule out treatments that are not safe for you. Choose any that apply.</p>
                   <div class="choice-grid">
@@ -631,7 +652,7 @@
                   <p class="concept-note">The full medical history is collected in intake after a plan is chosen. These questions only keep plans from being shown to someone who cannot safely be treated.</p>
                   <div class="proto-actions"><button class="link-btn back-btn">Back</button><button class="btn btn-primary next-btn">Continue</button></div>
                 </section>
-                <section class="proto-screen" data-screen="3">
+                <section class="proto-screen" id="screen-3" role="tabpanel" aria-labelledby="tab-3" tabindex="-1" data-screen="3">
                   <h3>What matters most right now?</h3>
                   <p>Pick one. It decides which plan we recommend next, and you can still choose any plan.</p>
                   <div class="choice-grid">
@@ -642,19 +663,30 @@
                   </div>
                   <div class="proto-actions"><button class="link-btn back-btn">Back</button><button class="btn btn-primary next-btn" id="seeOptions">See my options</button></div>
                 </section>
-                <section class="proto-screen" data-screen="4">
+                <section class="proto-screen" id="screen-4" role="tabpanel" aria-labelledby="tab-4" tabindex="-1" data-screen="4">
                   <h3>Choose your membership</h3>
                   <p>All plans include online intake, licensed provider review, and ongoing support from your care team.</p>
                   <p class="reco-why" id="recoWhy">Recommended: 3 months, because you chose “More time to build habits”. You can pick any plan.</p>
                   <div class="plan-grid proto-plans">
-                    <button class="plan-card" data-plan="monthly"><span class="popular" hidden>Recommended for you</span><h4>Monthly</h4><div class="plan-price">$49 <span>first month</span></div><div class="plan-total">Then $135 per month</div><span class="save">Flexible start</span></button>
-                    <button class="plan-card selected" data-plan="quarterly"><span class="popular">Recommended for you</span><h4>3 months</h4><div class="plan-price">$349</div><div class="plan-total">$116.33/month, billed every 3 months</div><span class="save">$56 less than 3 months at $135</span><span class="fin">or 4 payments of $87.25 with Affirm*</span></button>
-                    <button class="plan-card" data-plan="six"><span class="popular" hidden>Recommended for you</span><h4>6 months</h4><div class="plan-price">$599</div><div class="plan-total">$99.83/month, billed every 6 months</div><span class="save">$211 less than 6 months at $135</span><span class="fin">or 4 payments of $149.75 with Affirm*</span></button>
+                    <button class="plan-card" data-plan="monthly"><span class="popular" hidden>Recommended for you</span><span class="plan-name">Monthly</span><div class="plan-price">$49 <span>first month</span></div><div class="plan-total">Then $135 per month</div><span class="save">Flexible start</span></button>
+                    <button class="plan-card selected" data-plan="quarterly"><span class="popular">Recommended for you</span><span class="plan-name">3 months</span><div class="plan-price">$349</div><div class="plan-total">$116.33/month, billed every 3 months</div><span class="save">$56 less than 3 months at $135</span><span class="fin">or 4 payments of $87.25 with Affirm*</span></button>
+                    <button class="plan-card" data-plan="six"><span class="popular" hidden>Recommended for you</span><span class="plan-name">6 months</span><div class="plan-price">$599</div><div class="plan-total">$99.83/month, billed every 6 months</div><span class="save">$211 less than 6 months at $135</span><span class="fin">or 4 payments of $149.75 with Affirm*</span></button>
                   </div>
-                  <p class="concept-note">Savings compare each prepaid term with the $135 standard monthly rate. Because the monthly plan starts at $49, a new member’s first 3 months on monthly cost $319 and first 6 months cost $724, so the 6-month plan still saves $125 on that path while the 3-month plan does not save in its first term. *Illustrative pay-in-4 split; eligibility, terms, and APR are shown by Affirm at checkout. Medication cost is not part of the exercise pricing and must be confirmed before production.</p>
+                  <details class="cost-details">
+                    <summary>See total cost over time</summary>
+                    <table class="cost-table" aria-label="Total cost by plan over time">
+                      <thead><tr><th>If you stay</th><th>Monthly</th><th>3-month</th><th>6-month</th></tr></thead>
+                      <tbody>
+                        <tr><td>3 months</td><td class="best">$319</td><td>$349</td><td>$599</td></tr>
+                        <tr><td>6 months</td><td>$724</td><td>$698</td><td class="best">$599</td></tr>
+                        <tr><td>12 months</td><td>$1,534</td><td>$1,396</td><td class="best">$1,198</td></tr>
+                      </tbody>
+                    </table>
+                  </details>
+                  <p class="concept-note">Savings compare each prepaid term with the $135 standard monthly rate. The $49 first-month offer applies to the monthly plan only, so monthly is the cheapest way to try Zealthy for up to 3 months ($319 versus $349); over 6 or 12 months the prepaid plans cost less ($698 or $599 versus $724 at 6 months). *Illustrative pay-in-4 split; eligibility, terms, and APR are shown by Affirm at checkout. Medication cost is not part of the exercise pricing and must be confirmed before production.</p>
                   <div class="proto-actions"><button class="link-btn back-btn">Back</button><button class="btn btn-primary next-btn" id="planContinue">Continue with 3 months</button></div>
                 </section>
-                <section class="proto-screen" data-screen="5">
+                <section class="proto-screen" id="screen-5" role="tabpanel" aria-labelledby="tab-5" tabindex="-1" data-screen="5">
                   <h3>Save your plan and start intake</h3>
                   <p>The account keeps your plan, your intake answers, and your provider messages in one private place. It comes after the price, not before it.</p>
                   <div class="plan-pill"><span>Selected:</span><b id="accountPlan">3-month membership · $349</b></div>
@@ -668,9 +700,9 @@
                     <div class="field-mock"><small>Password</small><span>8+ characters</span></div>
                   </div>
                   <p class="privacy-line">Health information is encrypted and used only for your care. Text and email updates are optional.</p>
-                  <div class="proto-actions"><button class="link-btn back-btn">Back</button><button class="btn btn-primary next-btn">Continue to payment</button></div>
+                  <div class="proto-actions"><button class="link-btn back-btn">Back</button><button class="btn btn-primary next-btn">Create account and continue</button></div>
                 </section>
-                <section class="proto-screen" data-screen="6">
+                <section class="proto-screen" id="screen-6" role="tabpanel" aria-labelledby="tab-6" tabindex="-1" data-screen="6">
                   <h3>Review and pay</h3>
                   <p>Nothing is charged until you confirm. Your plan, today’s total, and renewal terms are all on this screen.</p>
                   <div class="checkout">
@@ -685,6 +717,7 @@
                       <div class="order-row discount" id="summaryDiscountRow" hidden><span>First-month offer</span><strong id="summaryDiscount">−$86</strong></div>
                       <div class="order-row total"><span>Due today</span><strong id="summaryDue">$349</strong></div>
                       <div class="order-row renew"><span>Renews</span><strong id="summaryRenew">$349 every 3 months ($116.33/mo)</strong></div>
+                      <div class="order-row renew"><span>Next charge</span><strong id="summaryNext">in 3 months</strong></div>
                       <label class="consent"><input type="checkbox" checked><span id="consentText">I understand my membership renews automatically at $349 every 3 months until I cancel, and that I can cancel anytime from account settings.</span></label>
                       <button class="btn btn-primary" id="reviewBtn" style="width:100%">Pay $349 today</button>
                       <p class="refund-line">Not eligible after provider review? Refunded in full.</p>
@@ -763,7 +796,7 @@
             </div>
           </div>
         </div>
-        <p class="concept-note" style="text-align:center; max-width:760px; margin:18px auto 0">Savings compare prepaid terms with the $135 recurring monthly rate. Treatment is subject to provider review. Because the monthly plan starts at $49, a new member’s first 3 months on monthly cost $319 and first 6 months cost $724. *Illustrative pay-in-4 split; eligibility, terms, and APR are shown by Affirm at checkout. Medication pricing, refund and cancellation terms, the patient count, and care-team inclusions require confirmation with clinical, legal, and marketing teams before this page is published.</p>
+        <p class="concept-note" style="text-align:center; max-width:760px; margin:18px auto 0">Savings compare prepaid terms with the $135 recurring monthly rate. Treatment is subject to provider review. The $49 first-month offer applies to the monthly plan only, so monthly is the cheapest first term ($319 versus $349 over 3 months) while the prepaid plans cost less over 6 or 12 months. *Illustrative pay-in-4 split; eligibility, terms, and APR are shown by Affirm at checkout. Medication pricing, refund and cancellation terms, the patient count, and care-team inclusions require confirmation with clinical, legal, and marketing teams before this page is published.</p>
       </div>
     </section>
 
@@ -800,10 +833,17 @@
           <p class="section-intro">Three plan lengths change cash flow, refund exposure, and retention, not only conversion. The rollout has to prove the pricing-first flow earns more paying members without creating a refund or support problem later.</p>
         </div>
         <div class="research-grid two">
-          <article class="finding opportunity reveal"><span class="tag">Primary metrics</span><h3>Paid conversion and plan mix</h3><p>Paid members per 100 landing visits, plan-select to payment completion, and the share choosing 3- or 6-month terms. Success is more paid members per visit with a plan mix that lifts the average first payment without raising refunds.</p></article>
-          <article class="finding opportunity reveal"><span class="tag">Guardrails</span><h3>Refunds, eligibility fails, support</h3><p>Refund and chargeback rate by plan, payments reversed because a provider declined treatment, and support contacts per 100 checkouts. Any of these rising against the current flow pauses the rollout.</p></article>
-          <article class="finding neutral reveal"><span class="tag">Experiments</span><h3>Three tests, in order</h3><p>1. Pricing-first flow against the current account-first flow, split by traffic source. 2. The "Balanced choice" label against no recommendation. 3. Affirm shown on 3- and 6-month plans only against every plan.</p></article>
-          <article class="finding neutral reveal"><span class="tag">Open questions</span><h3>Decisions needed before launch</h3><p>Whether medication cost sits inside membership pricing, the refund rule when a provider declines treatment, whether the $49 first month applies only to monthly, Affirm merchant terms, and which states are covered on day one.</p></article>
+          <article class="finding opportunity reveal"><span class="tag">Primary metric</span><h3>Net revenue per landing visitor</h3><p>Measured at 90 days, after refunds. A lower conversion rate with a richer plan mix can still win, so revenue per visitor decides. Secondary: paid conversion from landing to first payment, plan mix with a target of 35% or more choosing 3- or 6-month terms, first-payment order value, and Affirm take rate on prepaid plans.</p></article>
+          <article class="finding opportunity reveal"><span class="tag">Guardrails</span><h3>Any breach pauses rollout</h3><p>Paid conversion down more than 10% relative to the current flow, 14-day refund rate up more than 2 points, chargebacks above 0.5%, a rising share of payments reversed because a provider declined treatment, or more billing and cancellation support contacts per 100 orders.</p></article>
+          <article class="finding neutral reveal"><span class="tag">Experiments</span><h3>Three tests, in order</h3><p>1. Pricing-first flow against the current account-first flow, split evenly on paid social and search traffic, for two weeks or 1,000 first payments per arm. 2. The “Recommended for you” label against no label. 3. Affirm hints on 3- and 6-month plans only against every plan. The winner ships to everyone behind a flag that can be reverted in minutes.</p></article>
+          <article class="finding neutral reveal"><span class="tag">Open questions</span><h3>Decisions needed before launch</h3><p>Whether medication cost sits inside membership pricing, the refund rule when a provider declines treatment, whether the $49 first month applies only to monthly, today’s median tenure on monthly, Affirm merchant terms, and which states are covered on day one.</p></article>
+        </div>
+        <h3 class="sub-heading">What the three terms do for the business</h3>
+        <div class="principles">
+          <div class="principle"><b>1</b><strong>Cash up front</strong><p>A 6-month prepay collects $599 on day one against $49 on monthly, so paid acquisition cost is recovered at checkout instead of over months.</p></div>
+          <div class="principle"><b>2</b><strong>Fewer churn moments</strong><p>Monthly carries five renewal decisions and five card-decline risks in the first six months; a 6-month plan carries none. A monthly member who leaves after four payments is worth $454, a 6-month member $599.</p></div>
+          <div class="principle"><b>3</b><strong>Refund exposure</strong><p>Prepay creates a refund liability: $599 times the ineligible-after-payment rate times the prepaid share, plus mid-term cancellations. Revenue is recognised monthly, so finance carries deferred revenue.</p></div>
+          <div class="principle"><b>4</b><strong>The intro offer sets the mix</strong><p>The $49 first month makes monthly the cheapest first term, so the mix skews monthly unless prepaid plans earn their price with continuity and a recommendation the person can see the reason for.</p></div>
         </div>
       </div>
     </section>
@@ -812,16 +852,16 @@
       <div class="wrap">
         <div class="section-head">
           <div><div class="section-num">07</div><h2>How I would walk you through it</h2></div>
-          <p class="section-intro">The story moves from the business problem to the person experiencing it, then into the design and the decisions that still need validation.</p>
+          <p class="section-intro">The story moves from the business problem to the person experiencing it, then into the design, the numbers behind the pricing, and the decisions that still need validation.</p>
         </div>
         <div class="talk-grid">
           <div class="agenda">
-            <div class="agenda-item"><div class="agenda-num">01</div><div><h3>Frame the challenge</h3><p>Introduce the three-term pricing brief and the tension between affordability, commitment, and trust.</p></div><span class="time-pill">2 min</span></div>
-            <div class="agenda-item"><div class="agenda-num">02</div><div><h3>Show the observed journey</h3><p>Walk through goals, the early discount, and the account wall. Separate observation from assumption.</p></div><span class="time-pill">4 min</span></div>
-            <div class="agenda-item"><div class="agenda-num">03</div><div><h3>Introduce the proto-persona</h3><p>Explain the cautious comparator and the four needs shaping the solution.</p></div><span class="time-pill">3 min</span></div>
-            <div class="agenda-item"><div class="agenda-num">04</div><div><h3>Demo the redesigned flow</h3><p>Move from goals, eligibility, and safety questions to priorities, compare all plans, create the account, then show continuity at payment.</p></div><span class="time-pill">8 min</span></div>
-            <div class="agenda-item"><div class="agenda-num">05</div><div><h3>Walk the landing page</h3><p>Connect ad intent to clinical trust, program value, and transparent pricing.</p></div><span class="time-pill">5 min</span></div>
-            <div class="agenda-item"><div class="agenda-num">06</div><div><h3>Close with validation</h3><p>Name the open content questions, test plan, success measures, and next iteration.</p></div><span class="time-pill">4 min</span></div>
+            <div class="agenda-item"><div class="agenda-num">01</div><div><h3>Frame the challenge</h3><p>Introduce the three-term pricing brief and the tension between affordability, commitment, and trust.</p></div></div>
+            <div class="agenda-item"><div class="agenda-num">02</div><div><h3>Show the observed journey</h3><p>Walk through goals, the early discount, and the account wall. Separate observation from assumption.</p></div></div>
+            <div class="agenda-item"><div class="agenda-num">03</div><div><h3>Introduce the proto-persona</h3><p>Explain the cautious comparator and the four needs shaping the solution.</p></div></div>
+            <div class="agenda-item"><div class="agenda-num">04</div><div><h3>Demo the redesigned flow</h3><p>Move from goals, eligibility, and safety questions to priorities, compare all plans, create the account, then show continuity at payment.</p></div></div>
+            <div class="agenda-item"><div class="agenda-num">05</div><div><h3>Walk the landing page</h3><p>Connect ad intent to clinical trust, program value, and transparent pricing.</p></div></div>
+            <div class="agenda-item"><div class="agenda-num">06</div><div><h3>Close with validation</h3><p>Name the open content questions, test plan, success measures, and next iteration.</p></div></div>
           </div>
           <aside class="story-card">
             <h3>The one-sentence story</h3>
@@ -843,6 +883,7 @@
         <div class="source-list">
           <a class="source" href="https://docs.google.com/document/d/1Ug0PUvGT3jXJhqG2tBZBT6lMYOa-8ULGMQx_oyPXqFY/edit?tab=t.0" target="_blank" rel="noopener"><strong>Zealthy exercise brief</strong><span>Provided prompt, pricing, deliverables, and design constraints</span></a>
           <a class="source" href="https://drive.google.com/file/d/1VXI3QasU0A4Tkrs0-tXcbdQvJm_ADdq9/view" target="_blank" rel="noopener"><strong>Zealthy One Pager</strong><span>Mission, founder background, scale, and culture context</span></a>
+          <a class="source" href="https://app.getzealthy.com/weight-loss" target="_blank" rel="noopener"><strong>Live signup flow</strong><span>app.getzealthy.com/weight-loss, reviewed through the account gate on September 16, 2026</span></a>
           <a class="source" href="http://try.getzealthy.com/weight-loss" target="_blank" rel="noopener"><strong>Existing weight-loss landing page</strong><span>Reference for program claims: intake time, provider review, coaching</span></a>
           <a class="source" href="https://www.figma.com/file/JSAmqL22QW91izU0GrTIqn/Patient-Facing-Flows?node-id=365%3A4137&t=wUKQ9O01MkNlHKi5-1" target="_blank" rel="noopener"><strong>Patient-facing flows</strong><span>Provided Figma reference. Access requested September 17, 2026, pending at submission</span></a>
         </div>
@@ -870,21 +911,35 @@
     let currentStep = 0;
     let selectedPlan = 'quarterly';
     const planData = {
-      monthly: { label: 'Monthly membership', price: '$135', discount: '−$86', due: '$49', renew: '$135 every month after the first', finance: 'Affirm is available on 3- and 6-month plans. The $49 first month is paid by card.', name: 'monthly', short: 'monthly', consent: 'I understand my membership renews automatically at $135 each month after the first month until I cancel, and that I can cancel anytime from account settings.', pill: 'Monthly membership · $49 first month', button: 'Continue with monthly', landing: 'Monthly plan selected. First month is $49, then $135 per month.' },
-      quarterly: { label: '3-month membership', price: '$349', discount: '', due: '$349', renew: '$349 every 3 months ($116.33/mo)', finance: '4 payments of $87.25 with Affirm, subject to eligibility. Affirm shows exact terms before you commit.', name: '3 months', short: '3-month', consent: 'I understand my membership renews automatically at $349 every 3 months until I cancel, and that I can cancel anytime from account settings.', pill: '3-month membership · $349', button: 'Continue with 3 months', landing: '3-month plan selected. Continue to intake when ready.' },
-      six: { label: '6-month membership', price: '$599', discount: '', due: '$599', renew: '$599 every 6 months ($99.83/mo)', finance: '4 payments of $149.75 with Affirm, subject to eligibility. Affirm shows exact terms before you commit.', name: '6 months', short: '6-month', consent: 'I understand my membership renews automatically at $599 every 6 months until I cancel, and that I can cancel anytime from account settings.', pill: '6-month membership · $599', button: 'Continue with 6 months', landing: '6-month plan selected. Continue to intake when ready.' }
+      monthly: { label: 'Monthly membership', months: 1, price: '$135', discount: '−$86', due: '$49', renew: '$135 every month after the first', finance: 'Affirm is available on 3- and 6-month plans. The $49 first month is paid by card.', name: 'monthly', short: 'monthly', consent: 'I understand my membership renews automatically at $135 each month after the first month until I cancel, and that I can cancel anytime from account settings.', pill: 'Monthly membership · $49 first month', button: 'Continue with monthly', landing: 'Monthly plan selected. First month is $49, then $135 per month.' },
+      quarterly: { label: '3-month membership', months: 3, price: '$349', discount: '', due: '$349', renew: '$349 every 3 months ($116.33/mo)', finance: '4 payments of $87.25 with Affirm, subject to eligibility. Affirm shows exact terms before you commit.', name: '3 months', short: '3-month', consent: 'I understand my membership renews automatically at $349 every 3 months until I cancel, and that I can cancel anytime from account settings.', pill: '3-month membership · $349', button: 'Continue with 3 months', landing: '3-month plan selected. Continue to intake when ready.' },
+      six: { label: '6-month membership', months: 6, price: '$599', discount: '', due: '$599', renew: '$599 every 6 months ($99.83/mo)', finance: '4 payments of $149.75 with Affirm, subject to eligibility. Affirm shows exact terms before you commit.', name: '6 months', short: '6-month', consent: 'I understand my membership renews automatically at $599 every 6 months until I cancel, and that I can cancel anytime from account settings.', pill: '6-month membership · $599', button: 'Continue with 6 months', landing: '6-month plan selected. Continue to intake when ready.' }
     };
 
-    function showStep(index) {
+    function showStep(index, focusPanel) {
       currentStep = Math.max(0, Math.min(index, screens.length - 1));
       screens.forEach((screen, i) => screen.classList.toggle('active', i === currentStep));
-      tabs.forEach((tab, i) => tab.setAttribute('aria-selected', String(i === currentStep)));
+      tabs.forEach((tab, i) => { tab.setAttribute('aria-selected', String(i === currentStep)); tab.tabIndex = i === currentStep ? 0 : -1; });
       progressText.textContent = `Step ${currentStep + 1} of ${screens.length}`;
-      designNote.innerHTML = notes[currentStep];
+      designNote.innerHTML = notes[currentStep] || '';
+      if (focusPanel) screens[currentStep].focus({ preventScroll: true });
     }
     tabs.forEach(tab => tab.addEventListener('click', () => showStep(Number(tab.dataset.step))));
-    document.querySelectorAll('.next-btn').forEach(btn => btn.addEventListener('click', () => showStep(currentStep + 1)));
-    document.querySelectorAll('.back-btn').forEach(btn => btn.addEventListener('click', () => showStep(currentStep - 1)));
+    document.querySelector('.step-tabs').addEventListener('keydown', e => {
+      const delta = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+      let next = null;
+      if (delta) next = (currentStep + delta + tabs.length) % tabs.length;
+      else if (e.key === 'Home') next = 0;
+      else if (e.key === 'End') next = tabs.length - 1;
+      if (next === null) return;
+      e.preventDefault(); showStep(next); tabs[next].focus();
+    });
+    document.querySelectorAll('.next-btn').forEach(btn => btn.addEventListener('click', () => showStep(currentStep + 1, true)));
+    document.querySelectorAll('.back-btn').forEach(btn => btn.addEventListener('click', () => showStep(currentStep - 1, true)));
+    const pressables = [...document.querySelectorAll('.choice, .plan-card')];
+    const syncPressed = () => pressables.forEach(b => b.setAttribute('aria-pressed', String(b.classList.contains('selected'))));
+    pressables.forEach(b => { b.type = 'button'; b.addEventListener('click', () => setTimeout(syncPressed, 0)); });
+    syncPressed();
     document.querySelectorAll('.choice:not(.priority):not(.health)').forEach(choice => choice.addEventListener('click', () => choice.classList.toggle('selected')));
     const healthChips = [...document.querySelectorAll('.choice.health')];
     healthChips.forEach(chip => chip.addEventListener('click', () => {
@@ -893,7 +948,7 @@
       healthChips.find(c => c.dataset.none).classList.toggle('selected', !healthChips.some(c => !c.dataset.none && c.classList.contains('selected')));
     }));
     const priorityChips = [...document.querySelectorAll('.choice.priority')];
-    priorityChips.forEach(chip => chip.addEventListener('click', () => priorityChips.forEach(c => c.classList.toggle('selected', c === chip))));
+    priorityChips.forEach(chip => chip.addEventListener('click', () => { priorityChips.forEach(c => c.classList.toggle('selected', c === chip)); recommend(); }));
     function recommend() {
       const chip = priorityChips.find(c => c.classList.contains('selected')) || priorityChips[3];
       const reco = chip.dataset.reco;
@@ -902,7 +957,12 @@
       syncPrototypePlan(reco);
     }
     document.getElementById('seeOptions').addEventListener('click', recommend);
+    syncPrototypePlan(selectedPlan);
 
+    function nextCharge(months) {
+      const d = new Date(); d.setMonth(d.getMonth() + months);
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
     function syncPrototypePlan(plan) {
       selectedPlan = plan;
       document.querySelectorAll('.proto-plans .plan-card').forEach(card => card.classList.toggle('selected', card.dataset.plan === plan));
@@ -914,6 +974,7 @@
       document.getElementById('summaryDiscountRow').hidden = !data.discount;
       document.getElementById('summaryDiscount').textContent = data.discount;
       document.getElementById('summaryRenew').textContent = data.renew;
+      document.getElementById('summaryNext').textContent = nextCharge(data.months);
       document.getElementById('financeText').textContent = data.finance;
       document.getElementById('landingStart').textContent = `Start my intake with the ${data.short} plan`;
       document.getElementById('consentText').textContent = data.consent;
@@ -935,8 +996,9 @@
       syncPrototypePlan(plan);
     }
     document.querySelectorAll('.select-landing').forEach(btn => btn.addEventListener('click', () => selectLandingPlan(btn.dataset.plan)));
-    document.querySelectorAll('.lp-scroll').forEach(btn => btn.addEventListener('click', () => document.getElementById('pricing').scrollIntoView({ behavior: 'smooth', block: 'start' })));
-    document.querySelectorAll('[data-jump="flow"]').forEach(btn => btn.addEventListener('click', () => { showStep(0); document.getElementById('flow').scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+    const scrollBehavior = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    document.querySelectorAll('.lp-scroll').forEach(btn => btn.addEventListener('click', () => document.getElementById('pricing').scrollIntoView({ behavior: scrollBehavior, block: 'start' })));
+    document.querySelectorAll('[data-jump="flow"]').forEach(btn => btn.addEventListener('click', () => { showStep(0); document.getElementById('flow').scrollIntoView({ behavior: scrollBehavior, block: 'start' }); }));
 
     const toast = document.getElementById('toast');
     let toastTimer;
@@ -947,12 +1009,8 @@
       toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
     });
 
-    window.addEventListener('beforeprint', () => document.querySelectorAll('.faq details').forEach(d => { d.open = true; }));
+    window.addEventListener('beforeprint', () => document.querySelectorAll('details').forEach(d => { d.open = true; }));
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: .12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
